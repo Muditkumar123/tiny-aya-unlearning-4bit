@@ -373,7 +373,7 @@ We enter as one team of three.
 | Ganesh | [@ShGanesh](https://github.com/ShGanesh) | [@ShGanesh](https://huggingface.co/ShGanesh) |
 
 **Declaration of work done outside the hackathon.** The hackathon's work period started on 2026-11-01 (https://hackathon.lexsi.ai/).
-- **Mudit and Vedika:** all of their submitted work was done during the hackathon (Mudit's statement for both, 2026-11-14; Vedika's own confirmation was requested the same day).
+- **Mudit and Vedika:** all of their submitted work was done during the hackathon (Mudit's statement for both, 2026-11-14, and Vedika's own statement the same day).
 - **Ganesh:** Ganesh's files in this repository were last modified on the lab machine between 2026-11-06 and 2026-11-13. File times are not proof of when or by whom work was done. Ganesh's own statement about any earlier related work is pending.
 - **Earlier work by others that we used, not ours:** the Tiny Aya Global base model; the datasets in section 4; the Lexsi toolkits SafeTune, CircuitKIT and AuditKIT; the NPO and EAP-IG methods; optimum-quanto, Transformers and PEFT; and the WildGuard judge.
 
