@@ -1,0 +1,36 @@
+{
+ "ckpt": "~/Lexsi/Mudit/out/refusal_circuit_matched/tiny-aya-refusal-protected-q4",
+ "kind": "quanto",
+ "sha256": "79383e5436d57572abf64db01a4acf10ad7f534435a6f66de15a3e9a9511fe42",
+ "bytes": 3830144052,
+ "sha256_status": "new reference: no output hash is recorded in this checkpoint's provenance",
+ "versions": {
+  "torch": "2.11.0+cu128",
+  "optimum-quanto": "0.2.7"
+ },
+ "recorded": {
+  "bytes": null,
+  "source": null,
+  "source_sha256": null
+ },
+ "source": {
+  "dir": "~/.cache/huggingface/hub/models--CohereLabs--tiny-aya-global/snapshots/af89d219b53ed9b13b8a4645f9c8028973510324",
+  "sha256": {
+   "model-00001-of-00002.safetensors": "0590022d0efe06f12e08e1e94302f069dff404341b426f7435c6303725635fb1",
+   "model-00002-of-00002.safetensors": "2ac3809931d113785058809f27775620e0b8aec6fbc7e163c9c09c08b5f90dab"
+  },
+  "note": "no source hash recorded in the checkpoint: lineage rests on the recorded path and the bitwise weight comparison below"
+ },
+ "header_unquantized_dtypes": [
+  "BF16"
+ ],
+ "checks": {
+  "decoder_linears": 252,
+  "qint4": 175,
+  "bf16": 77,
+  "qmap_entries": 175,
+  "excluded_params_compared": 115
+ },
+ "failures": [],
+ "pass": true
+}

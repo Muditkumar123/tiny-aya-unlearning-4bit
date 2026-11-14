@@ -1,0 +1,25 @@
+# Exact versions of the environment used for all re-verification and rescoring (R1-R5), Python 3.12.16 on Linux. The historical training and builds may have used other versions; see WRITEUP section 7.
+# The list is every third-party package the shipped code imports, plus tokenizers, accelerate, pyarrow (parquet reading) and ninja. Their own dependencies are not pinned.
+# torch is the cu128 build: pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0
+transformers==5.22.1
+tokenizers==0.23.3
+accelerate==1.15.0
+peft==0.21.2
+optimum-quanto==0.2.7
+bitsandbytes==0.50.2
+safetensors==0.8.0
+huggingface_hub==1.33.0
+datasets==5.1.0
+numpy==2.4.6
+pandas==3.1.0
+pyarrow==26.0.0
+scikit-learn==1.9.1
+nltk==3.10.4
+rouge_score==0.1.2
+PyYAML==6.0.3
+# ninja builds the quanto CUDA kernels (with CUDA_HOME set to a CUDA 12.x toolkit)
+ninja==1.13.2
+auditkit==1.1.3
+circuitkit==0.2.0
+safetune==0.1.10
