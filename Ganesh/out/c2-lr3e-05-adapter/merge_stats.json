@@ -1,0 +1,5 @@
+{
+ "rel_rounding_error_of_delta": 0.5258737221864752,
+ "share_of_weights_changed_in_bf16": 0.42542949956713283,
+ "delta_fro_norm_fp32": 3.7895909181229848
+}

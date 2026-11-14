@@ -1,0 +1,36 @@
+# C0 v2 (Plan B target model): Tiny Aya Global LoRA fine-tuned on full TOFU, then merged. Replaces c0.yaml (v1, too weak).
+# Frozen before the run. Change from v1 and why: common/CHANGELOG.md, entry 2026-11-07 07:55 · Ganesh.
+model:
+  name: CohereLabs/tiny-aya-global
+  revision: af89d219b53ed9b13b8a4645f9c8028973510324
+  dtype: bfloat16
+data:
+  name: locuslab/TOFU
+  config: full            # 4000 Q&A; rows 3600-3999 are forget10
+  split: train
+  revision: 324592d84ae4f482ac7249b9285c2ecdb53e3a68
+format:
+  # Tiny Aya chat template: question = user turn, answer = assistant turn, default system preamble kept.
+  # Loss only on the assistant span: answer tokens plus <|END_RESPONSE|><|END_OF_TURN_TOKEN|>.
+  max_length: 512         # longest templated example is ~495 tokens; the script asserts nothing is truncated
+lora:
+  r: 32
+  alpha: 64
+  dropout: 0.0
+  target_modules: all-linear   # every linear layer except lm_head
+train:
+  learning_rate: 2.0e-4      # v1: 1.0e-4
+  epochs: 10                  # v1: 5
+  per_device_batch: 4
+  grad_accum: 4           # effective batch 16 -> 250 steps/epoch, 2500 steps total
+  lr_scheduler: linear
+  warmup_steps: 50
+  weight_decay: 0.0
+  optim: adamw_torch
+  bf16: true
+  gradient_checkpointing: true
+  seed: 0
+  logging_steps: 10
+output:
+  adapter_dir: Ganesh/out/c0v2-adapter
+  merged_dir: Ganesh/out/c0v2-target-merged   # bf16

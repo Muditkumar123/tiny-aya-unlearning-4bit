@@ -1,0 +1,28 @@
+{
+ "base": "CohereLabs/tiny-aya-global",
+ "revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
+ "adapter": "Ganesh/out/c0v2-adapter",
+ "merged": "Ganesh/out/c0v2-target-merged",
+ "sha256_merged": "4375fe12a7af731525019cffb9932d98a96d0f12567cbe72d757809959ff10a6",
+ "sha256_adapter": "bfa03b55a58388c4f64dcd24029a521e7897ea707b31574eebff538366383132",
+ "versions": {
+  "torch": "2.11.0+cu128",
+  "transformers": "5.22.1",
+  "peft": "0.21.2"
+ },
+ "torch_threads": 64,
+ "lora_linears": 252,
+ "tensors_compared": 290,
+ "absent_tied": [
+  "lm_head.weight"
+ ],
+ "absent_untied": [],
+ "mismatches": [],
+ "n_mismatched_tensors": 0,
+ "reload": {
+  "param_dtypes": {
+   "torch.bfloat16": 3349227520
+  }
+ },
+ "pass": true
+}
