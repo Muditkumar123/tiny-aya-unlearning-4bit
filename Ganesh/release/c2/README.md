@@ -14,12 +14,6 @@ tags:
 - research
 ---
 
-<!-- CANDIDATE, not uploaded. Access: public and ungated (PLAN D1); licence and AUP notices stay.
-     Destination Mudit666 is the Orchestrator's local default (01:02; active account verified, repos not created).
-     Before upload: team publication approval. At publication, remove the release-status line below. -->
-
-> **Release status: planned, not yet published.** The Hugging Face repos (`Mudit666/...`) and the GitHub repository named in this card are planned destinations. They are not live until the team publishes them.
-
 # Tiny Aya Global after SafeTune NPO unlearning on TOFU forget10 (C2)
 
 C2 is the TOFU target model C0v2 (`Mudit666/tiny-aya-tofu-c0v2`) after NPO unlearning training on the [TOFU](https://huggingface.co/datasets/locuslab/TOFU) forget10 set: 400 questions about 20 fictitious authors. The unlearning used [SafeTune](https://github.com/Lexsi-Labs/SafeTune)'s `npo_unlearn` (Negative Preference Optimization with a retain term). Both models derive from [CohereLabs/tiny-aya-global](https://huggingface.co/CohereLabs/tiny-aya-global).
@@ -37,7 +31,7 @@ It was made for one research question: does unlearning survive 4-bit compression
 
 The adapter applies to C0v2's merged weights, not to the original Tiny Aya. `tokenizer.json` is byte-identical to the base model's at revision `af89d219`, and the chat template is the base model's default template.
 
-- **Upload edits (copies only; the weights are unchanged):** `generation_config.json` `eos_token_id` 3 → [6, 3]; `adapter/adapter_config.json` `base_model_name_or_path` from the local training path to `Mudit666/tiny-aya-tofu-c0v2`; `revision` set to that repo's actual commit once it exists. Before/after sha256 are logged in the upload manifest (`Ganesh/release/make_upload_copies.py`).
+- **Upload edits (copies only; the weights are unchanged):** `generation_config.json` `eos_token_id` 3 → [6, 3]; `adapter/adapter_config.json` `base_model_name_or_path` from the local training path to `Mudit666/tiny-aya-tofu-c0v2`; `revision` set to the commit of that repo that holds C0v2's weights. Before/after sha256 of each edited file were recorded in the team's lab upload manifest, which is not published.
 
 ## How to use
 

@@ -12,12 +12,6 @@ tags:
 - research
 ---
 
-<!-- CANDIDATE, not uploaded. Access: public and ungated (PLAN D1); licence and AUP notices stay.
-     Destination Mudit666 is the Orchestrator's local default (01:02; active account verified, repos not created).
-     Before upload: team publication approval. At publication, remove the release-status line below. -->
-
-> **Release status: planned, not yet published.** The Hugging Face repos (`Mudit666/...`) and the GitHub repository named in this card are planned destinations. They are not live until the team publishes them.
-
 # Tiny Aya Global, TOFU target model (C0v2)
 
 C0v2 is [CohereLabs/tiny-aya-global](https://huggingface.co/CohereLabs/tiny-aya-global) fine-tuned to memorise the [TOFU](https://huggingface.co/datasets/locuslab/TOFU) question–answer pairs about 200 fictitious authors. It is the **target model** for an unlearning study: C2 (`Mudit666/tiny-aya-tofu-npo-c2`) is this model after SafeTune NPO unlearning training that targets 20 of those authors.
@@ -33,7 +27,7 @@ It was made for one research question: does unlearning survive 4-bit compression
 
 `tokenizer.json` is byte-identical to the base model's at revision `af89d219`. The chat template is the base model's default template. `tokenizer_config.json` and `config.json` were re-saved by transformers 5.22.1, so their bytes differ from the base files.
 
-- **Upload edits (copies only; the weights are unchanged):** `generation_config.json` `eos_token_id` 3 → [6, 3]; `adapter/adapter_config.json` `revision` null → `af89d219b53ed9b13b8a4645f9c8028973510324`, the Tiny Aya commit it was trained on. Before/after sha256 are logged in the upload manifest (`Ganesh/release/make_upload_copies.py`).
+- **Upload edits (copies only; the weights are unchanged):** `generation_config.json` `eos_token_id` 3 → [6, 3]; `adapter/adapter_config.json` `revision` null → `af89d219b53ed9b13b8a4645f9c8028973510324`, the Tiny Aya commit it was trained on. Before/after sha256 of each edited file were recorded in the team's lab upload manifest, which is not published.
 
 ## How to use
 
