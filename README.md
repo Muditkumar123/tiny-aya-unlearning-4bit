@@ -1,6 +1,6 @@
 # Compressing Tiny Aya to 4 bits: refusal shows no detected change, while a model after NPO unlearning loses retained-set overlap and its forget measures disagree
 
-**Status: release text, 2026-11-14. All sections are written from reviewed handoffs, and each person confirmed their own contribution entry. The Hugging Face repositories are planned and listed by name in section 7; real links replace that list after upload.**
+**Status: release text, 2026-11-14 (revision v7). All sections are written from reviewed handoffs, and each person confirmed their own contribution entry. Section 7 lists which Hugging Face repositories are live and which are still to be uploaded. Section 11 maps the hackathon's write-up checklist to sections.**
 - Numbers come from saved files, named next to each number.
 - Order: findings first, process last.
 
@@ -18,6 +18,7 @@ Study S, all four models scored on the same prompts. Δ is the model minus the o
 | protected-q4 (attribution-selected 77 linears kept bf16) | 3,830,144,052 | 42.8% smaller | +0.006 [-0.018, +0.036] | +0.000 [-0.024, +0.024] | -0.4 [-3.0, +2.2] |
 
 **Reading.**
+- **Bottom line: a null result for the protection method.** Plain qint4 makes the weight file 61.7% smaller with no detected loss on these sets. Keeping an attribution-selected refusal mask in bf16 costs 49.1% more storage than plain qint4 and showed no detected benefit over plain qint4 or a same-size random mask.
 - On these sets, no compressed model showed a detected change against the original on HarmBench refusal, XSTest over-refusal or English MMLU. "No change detected" is not proof of preservation.
 - The protected model's weight file is **49.1% larger than plain-q4's**: 3,830,144,052 vs 2,568,072,456 bytes.
 - The protected model showed no detected HarmBench refusal gain over the same-size random mask: −0.024 [−0.060, +0.012].
@@ -184,7 +185,9 @@ Facts checked so far (R1 and R2, both audited PASS):
 This is a short comparison with the closest primary work, not a systematic review. The broad questions are not new; what we add is one carefully re-verified case on a multilingual small model.
 
 - **Quantization can undo unlearning.** Zhang et al. ([Catastrophic Failure of LLM Unlearning via Quantization](https://arxiv.org/abs/2410.16454), ICLR 2025) report that 4-bit quantization of unlearned models restores much of the "forgotten" knowledge. Abitante et al. ([Quantization-Robust LLM Unlearning via Low-Rank Adaptation](https://arxiv.org/abs/2602.13151), IJCNN 2026) report that putting the unlearning update into LoRA adapters helps it survive 4-bit PTQ, on Llama-2-7B with MUSE.
-  - *Here:* a LoRA NPO unlearning run on Tiny Aya, scored on TOFU after qint4. Two forget measures moved in opposite directions (word overlap down, gold-answer likelihood up), and the retained set lost much of its overlap. We do not show semantic recovery or test a remedy. Our setup also differs from Abitante et al.'s, because our LoRA update was merged into bf16 weights before quantizing.
+  - *Here:* a LoRA NPO unlearning run on Tiny Aya, scored on TOFU after qint4. Two forget measures moved in opposite directions (word overlap down, gold-answer likelihood up), and the retained set lost much of its overlap. We do not show semantic recovery or test a remedy. Like Abitante et al., we merged the LoRA update into the base weights before quantizing (their §V-B), so merging does not set our setup apart. The differences are the model (Tiny Aya Global 3.35B vs Llama-2-7B), the benchmark (TOFU vs MUSE), the quantizer (quanto qint4, weight-only, groups of 128, vs RTN at Int8/Int4), and one NPO run with a gradient-difference retain term (lr 3e-5, chosen from two trained learning rates on the same rows we report) rather than their NPO and gradient-ascent runs with two retain regularizers.
+- **Recovery attacks through quantization.** Khan and Sohel ([DurableUn: Quantization-Induced Recovery Attacks in Machine Unlearning](https://arxiv.org/abs/2605.02196), 2026) study recovery after INT4 quantization across several unlearning methods on LLaMA-3-8B-Instruct, with TOFU, MUSE-News and WikiBio.
+  - *Here:* we neither attack nor defend; we report one measured case on a smaller multilingual model.
 - **Safety of quantized models.** Chen et al. ([Assessing Safety Risks and Quantization-aware Safety Patching for Quantized LLMs](https://proceedings.mlr.press/v267/chen25ci.html), ICML 2025) evaluate safety across quantization methods and propose Q-resafe to restore it. Wee et al. ([Safety-Preserving PTQ via Contrastive Alignment Loss](https://arxiv.org/abs/2511.07842v5), 2026) add an alignment loss to the PTQ objective.
   - *Here:* a simpler allocation, which keeps an attribution-selected set of layers in bf16, compared against a same-size random set and plain qint4, with Hindi and Arabic red-team prompts. We neither optimize a safety objective nor benchmark against these methods. Our result for the allocation is a null on the headline cell, at a 49.1% storage cost over plain qint4.
 - **Methods we use as given.**
@@ -220,7 +223,7 @@ The three toolkits are installed from PyPI (`requirements.txt`) and keep their o
 
 - **Model.** `CohereLabs/tiny-aya-global` at revision af89d219, bf16.
 - **Models C0v2 and C2.** LoRA fine-tune on all of TOFU, then SafeTune NPO unlearning of forget10. Full recipe in Appendix A.
-- **Data.** Fixed sets in `common/data/`, pinned to dataset revisions (table in Appendix B). Licences are listed in Vedika.md 01:40.
+- **Data.** Fixed sets in `common/data/`, pinned to dataset revisions (table in Appendix B). Licences, as read from each card: HarmBench MIT, Aya red-teaming Apache-2.0, XSTest CC-BY-4.0, TOFU MIT, Global-MMLU Apache-2.0, Alpaca CC-BY-NC-4.0 (ids and hashes only), WildGuard judge Apache-2.0 with AI2 research-use terms. Tiny Aya and every model derived from it are CC-BY-NC-4.0 with Cohere's acceptable-use policy. The data repository's card has the full table.
 - **Conditions and settings.** PLAN sections 3 and 5:
   - greedy decoding, stop IDs [6, 3];
   - the chat template, with its rendered length measured (371-414 tokens on TOFU);
@@ -258,7 +261,7 @@ Every result was reviewed by an independent auditor. The audit log separates che
   - ROUGE-L measures word overlap, not factual correctness.
   - The WildGuard verdict is a judge's label.
   - KL values (first-token, and mean teacher-forced over the original's answers) are descriptive, without intervals.
-- **Hindi/English judge check (J3) is exploratory, not a validation.** Two team members (rater A and rater B) each submitted labels for the same 140 procedurally blinded items (100 Hindi, 40 English) for refusal and harmful content; whether either had seen the answers or labels before was not independently confirmed. The two submitted sheets agree in every label cell. Rater A's account, given to their own agent, is that they labelled entirely by themselves; it corrects their earlier report of partial AI or translation-tool help. Rater B's account, relayed by a team member to the coordinator, is that they labelled entirely by themselves; it corrects an earlier relayed report of partial AI help. The superseded reports are kept on record. Neither account, nor the raters' independence, was independently verified. Because how the sheets came to agree is unexplained, they are compared with WildGuard's stored labels only as one descriptive annotation pattern: not 280 independent judgments, not a measure of rater agreement, and not a human validation of the judge. Result (`Mudit/release/j3_public/J3_EXPLORATORY_RESULTS_20261114.public.md`): 14 of 100 Hindi refusal labels and 10 of 100 Hindi harmful-answer labels differed from WildGuard's, all with annotation yes and WildGuard no; in English, 0 of 40 refusal labels and 1 of 40 harmful-answer labels differed. These are label counts, not distinct answers. The Hindi WildGuard labels remain unvalidated, and Arabic was not examined.
+- **Hindi/English judge check (J3) is exploratory, not a validation.** Two team members (rater A and rater B) each submitted labels for the same 140 procedurally blinded items (100 Hindi, 40 English) for refusal and harmful content; whether either had seen the answers or labels before was not independently confirmed. The two submitted sheets agree in every label cell. Rater A's account, given to their own agent, is that they labelled entirely by themselves; it corrects their earlier report of partial AI or translation-tool help. Rater B's account, relayed by a team member to the coordinator, is that they labelled entirely by themselves; it corrects an earlier relayed report of partial AI help. A later self-report from Rater B, given in their own session, is in a dated addendum (`Vedika/release/J3_PUBLIC_ADDENDUM_20261114.md`); it changes no number and leaves independence unconfirmed. The superseded reports are kept on record. Neither account, nor the raters' independence, was independently verified. Because how the sheets came to agree is unexplained, they are compared with WildGuard's stored labels only as one descriptive annotation pattern: not 280 independent judgments, not a measure of rater agreement, and not a human validation of the judge. Result (`Mudit/release/j3_public/J3_EXPLORATORY_RESULTS_20261114.public.md`): 14 of 100 Hindi refusal labels and 10 of 100 Hindi harmful-answer labels differed from WildGuard's, all with annotation yes and WildGuard no; in English, 0 of 40 refusal labels and 1 of 40 harmful-answer labels differed. These are label counts, not distinct answers. The Hindi WildGuard labels remain unvalidated, and Arabic was not examined.
 - **Sample size and multiplicity.** 50 prompts per Aya language; many cells; no multiplicity correction. The headline cells are U2 forget retention and S1 HarmBench refusal.
 - **Answer length cap.** Safety answers are capped at 256 tokens. Re-tokenizing the saved answers suggests many reach the cap (for example 29-33 of 50 Hindi answers per model), so some may have been judged on cut text; actual truncation is unverified.
 - **No second quantizer.** NF4 versions were not rescored.
@@ -266,6 +269,12 @@ Every result was reviewed by an independent auditor. The audit log separates che
 - **LoRA unlearning.** C2 is a LoRA (r 32) unlearning run, not the full-weight fine-tuning used in the cited NPO setting.
 
 ## 7. Reproduction
+
+Repository layout:
+- `Mudit/`: CircuitKIT builds, checkpoint verification (R1), the C1/C3 and original rescores, Study S build metadata, release tooling and the public J3 notes.
+- `Ganesh/`: SafeTune fine-tune and unlearning configs and scripts, merge diagnostics, the R2 rescore and the C0v2/C2 cards.
+- `Vedika/`: AuditKIT evaluation scripts and tests, the data builders, the evaluation-methods section, and the numeric export with `reproduce.py`.
+- `common/addons/`: shared helpers (the in-memory AuditKIT model, paired and clustered bootstrap, KL divergence, flip rate) with tests.
 
 Environment, as installed and used for every run in this revision:
 - Python 3.12.16, torch 2.11.0+cu128, transformers 5.22.1, peft 0.21.2, optimum-quanto 0.2.7, bitsandbytes 0.50.2, rouge_score 0.1.2;
@@ -300,7 +309,7 @@ In the public copies of 16 files (the R1 reports, `Mudit/out/study_s_metadata.js
   - `python Ganesh/scripts/r2_rescore.py <label> <checkpoint> --out <new dir>` for C0v2 and C2;
   - `Mudit/out/r4_rescore/run.sh <new dir>` for C1 and C3;
   - `Mudit/out/r4a_original/run.sh <new dir>` for the original;
-  - `python Vedika/scripts/evaluate.py <label> <checkpoint> --out <new dir>` for the Study S safety sets, and `python Vedika/scripts/mmlu_only.py <label> <checkpoint> --out <new dir>` for its utility rows, for plain-q4, random30-q4 and protected-q4. Give all three `evaluate.py` calls the same `--out`; the first call also scores the original. `mmlu_only.py`'s check of the original reads the lab's R4a rows, which are not in the repository (Vedika/release/RELEASE_FILES.md). Settings are in Appendix B.
+  - `python Vedika/scripts/evaluate.py <label> <checkpoint> --out <new dir>` for the Study S safety sets, and `python Vedika/scripts/mmlu_only.py <label> <checkpoint> --out <new dir>` for its utility rows, for plain-q4, random30-q4 and protected-q4. Give all three `evaluate.py` calls the same `--out`; the first call also scores the original. Run `python Vedika/scripts/mmlu_only.py original --out <new dir>` first: it compares the original's fresh rows with the shipped numeric rows in `Vedika/release/export/study_u/original/` (same ids and order, log-prob gap below 1e-6, same predictions) and stops on any difference. `Vedika/scripts/test_mmlu_only.py` checks that comparison on CPU. Settings are in Appendix B.
 - **Contrasts on fresh rows.** `Vedika/scripts/r4_contrasts.py` reads fixed source paths (its `SOURCES`, line 27). To run it on fresh rows, point `SOURCES` at the new folders. Alternatively, compare the fresh rows with the archived ones using `Ganesh/scripts/compare_regen.py`; if they match, the archived contrasts apply.
 - This fresh path was not itself run end to end in this revision. What was run is A, plus the CPU check above.
 - **Rebuilding C1/C3 (current portable recipe).** `python Mudit/scripts/build_qint4.py <bf16 source dir> <new out dir> --expect-source-sha <sha256>` needs no git and no fixed paths. It records the source and output hashes, library versions and its own sha256. Its CPU test `Mudit/scripts/test_build_qint4.py` builds a tiny model, and the R1 checker accepts the result. This recipe is new; it is not the code that built the released C1/C3, and it has not been run on the real models. A rebuild is expected to match R1's precision checks, not the released file hashes.
@@ -334,7 +343,14 @@ The Mudit build scripts on disk are not proven to be the code that ran (Mudit.md
 | C1-NF4 | `736f7ffe7ffbf8881f29366f0371977bfa7550fb9201e16a037cdab67f6ac2e5` |
 | C3-NF4 | `413ef8b2646870ee5e177d5698e60d37a7db61a0092b01abc167cb885748f132` |
 
-Code: https://github.com/Muditkumar123/tiny-aya-unlearning-4bit. Hugging Face (planned publication under `Mudit666`; when this text was written these repositories were not yet published, so a listed name may not resolve yet; real links replace this list after upload): models `Mudit666/tiny-aya-tofu-c0v2`, `Mudit666/tiny-aya-tofu-npo-c2`, `Mudit666/tiny-aya-tofu-c0v2-qint4`, `Mudit666/tiny-aya-tofu-npo-c2-qint4`, `Mudit666/tiny-aya-global-qint4`, `Mudit666/tiny-aya-global-qint4-random77-bf16`, `Mudit666/tiny-aya-global-qint4-refusalmask77-bf16`; data and logs `Mudit666/tiny-aya-compression-evaluation`.
+**Artifacts.**
+- Code: https://github.com/Muditkumar123/tiny-aya-unlearning-4bit
+- Live on Hugging Face (2026-11-14):
+  - data (numbers and ids, no text): https://huggingface.co/datasets/Mudit666/tiny-aya-compression-evaluation
+  - plain-q4: https://huggingface.co/Mudit666/tiny-aya-global-qint4
+  - random30-q4: https://huggingface.co/Mudit666/tiny-aya-global-qint4-random77-bf16
+  - protected-q4: https://huggingface.co/Mudit666/tiny-aya-global-qint4-refusalmask77-bf16
+- Not yet uploaded when this revision was written (these names may not resolve yet): C0v2 `Mudit666/tiny-aya-tofu-c0v2`, C2 `Mudit666/tiny-aya-tofu-npo-c2`, C1 `Mudit666/tiny-aya-tofu-c0v2-qint4`, C3 `Mudit666/tiny-aya-tofu-npo-c2-qint4`, and the model and data collections.
 
 ## 8. Contributions
 
@@ -345,6 +361,63 @@ Each person confirmed their own entry (Mudit 2026-11-12, Vedika 2026-11-13, Gane
 - **Vedika:** AuditKIT evaluation (the data sets and their provenance, the scoring harnesses, the stop-token fix, the judge check, the Study U contrasts and the Study S rescore, utility and tables), the dataset licence checklist, the evaluation-methods section, and the numbers-only release export with its reproduction script. Plan approval 01:44; approved the original-model rescore (R4a).
 
 How the work was done: each person worked with an AI coding agent in their own folder, which wrote and ran most of the code under that person's direction. A separate AI auditor reviewed every handoff, and an AI coordinator tracked tasks; neither wrote project code. The team's handoff and audit logs record who did what; they are kept privately and are not part of this repository, so citations such as `Vedika.md 19:57` or `audit.md 19:59` point to those logs.
+
+## 9. Teammates, and work done outside the hackathon
+
+We enter as one team of three.
+
+| Person | GitHub | Hugging Face |
+| --- | --- | --- |
+| Mudit | [@Muditkumar123](https://github.com/Muditkumar123) | [@Mudit666](https://huggingface.co/Mudit666) |
+| Vedika | [@vedikajain2004](https://github.com/vedikajain2004) | [@vedikajain](https://huggingface.co/vedikajain) |
+| Ganesh | [@ShGanesh](https://github.com/ShGanesh) | [@ShGanesh](https://huggingface.co/ShGanesh) |
+
+**Declaration of work done outside the hackathon.** The hackathon's work period started on 2026-11-01 (https://hackathon.lexsi.ai/).
+- **Mudit and Vedika:** all of their submitted work was done during the hackathon (Mudit's statement for both, 2026-11-14; Vedika's own confirmation was requested the same day).
+- **Ganesh:** Ganesh's files in this repository were last modified on the lab machine between 2026-11-06 and 2026-11-13. File times are not proof of when or by whom work was done. Ganesh's own statement about any earlier related work is pending.
+- **Earlier work by others that we used, not ours:** the Tiny Aya Global base model; the datasets in section 4; the Lexsi toolkits SafeTune, CircuitKIT and AuditKIT; the NPO and EAP-IG methods; optimum-quanto, Transformers and PEFT; and the WildGuard judge.
+
+## 10. With more credits
+
+None of this was run. The "before" values are this report's; the "after" values are what each step would measure, not predicted results.
+
+| Planned step | Before (this report) | Expected after |
+| --- | --- | --- |
+| **Blinded factual-recall check (Study U).** About 100 new phrasings of facts about the 20 forget authors, answered by C2 and C3 (C0v2 and C1 as context), scored blind by two human raters; primary result C3 − C2 correct rate with an author-clustered bootstrap. Estimated at 15-30 minutes on one A100 plus about 3 hours per rater. | Only proxies, and they disagree: retention −0.058 [−0.081, −0.034], likelihood +0.215 nats/token [+0.129, +0.305]. | One factual-recall difference with an interval. We do not predict its sign. A difference of about 10 percentage points is the assumed detectable size, not a power calculation. |
+| **More random controls (Study S).** About 20 random 77-linear masks instead of one, scored on the same sets. | One random draw; protected vs random HarmBench refusal −0.024 [−0.060, +0.012]. | The protected model placed within a distribution of random masks, as a description. Given the current null, we expect it inside that spread. A benefit claim would need a test against that distribution, fixed before scoring, not only a position outside it. |
+| **Larger Hindi and Arabic refusal sets, with validated labels.** More Aya red-teaming prompts per language, and independent human raters to check WildGuard on Hindi and Arabic. | 50 prompts per language; Hindi protected vs random +0.120 [+0.040, +0.220], Arabic pointing the other way, unadjusted; WildGuard not validated on either. | With four times the prompts, and assuming similar refusal rates and variance, interval widths fall roughly by half (to about ±0.05 for Hindi). This would show whether the Hindi cell holds up. |
+| **Seeds and remedies (Study U).** Three or more unlearning seeds, and the quantization-robust approaches of Zhang et al. and Abitante et al. on Tiny Aya. | One seed; C3 − C2 retained overlap −0.469 [−0.523, −0.416], English MMLU −4.2 pp [−8.0, −0.4]. | Seed spread for these changes, and whether a remedy reduces the retained-set loss. No size forecast. |
+| **Serving cost.** Inference speed, GPU memory and cost per request for each model. | Storage only: plain-q4 61.7% smaller than the original; protected 49.1% larger than plain-q4. | Measured speed and memory, so that the storage tradeoff can be weighed against serving cost. |
+
+## 11. Write-up checklist
+
+Where each item of the hackathon's write-up checklist is answered.
+
+| Checklist item | Where |
+| --- | --- |
+| Title and one-line claim | Title; At a glance |
+| Track and problem statement | Track line under the status; Abstract |
+| Abstract with headline before→after number, base model and method | Abstract |
+| Problem and approach, and why this problem | Abstract; section 2 |
+| Kits used and how they connect | Section 3 |
+| Models and licences | Sections 4 and 7 (artifact identity); Appendix A |
+| Datasets, licences, splits and leak check | Section 4 (data and licences); Appendix B, Data (pinned revisions, held-out split, overlap) |
+| Metrics and why | Appendix B, Metrics |
+| Method and hyperparameters | Section 4; Appendix A; Appendix B, frozen generation settings |
+| Results before vs after | At a glance; section 1 |
+| Limitations | Section 6; Appendix B, Limits |
+| With more credits | Section 10 |
+| Artifacts: Hugging Face models and data, GitHub repository | Section 7, Artifacts (collections and four model repositories still to come) |
+| Repository layout and run instructions | Section 7 |
+| Declaration of work done outside the hackathon | Section 9 (Ganesh's statement pending) |
+| Teammates tagged | Section 9; contributions in section 8 |
+| Optional: for judges in one minute | At a glance |
+| Optional: related work | Section 2a |
+| Optional: judge-agreement check | Section 6 (J3); Appendix B, The judge |
+| Optional: confidence intervals and negative results | Throughout; the null result is first under At a glance |
+| Optional: compute and cost | Section 7 (hardware); storage under At a glance; speed and serving cost not measured |
+| Optional: LLM usage statement | Section 8, last paragraph |
+| Optional: content warning | Not needed: this report quotes no harmful prompts or answers |
 
 ## Appendix A. SafeTune: models and re-verification
 
