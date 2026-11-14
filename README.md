@@ -1,6 +1,6 @@
 # Compressing Tiny Aya to 4 bits: refusal shows no detected change, while a model after NPO unlearning loses retained-set overlap and its forget measures disagree
 
-**Status: release text, 2026-11-14 (revision v7). All sections are written from reviewed handoffs, and each person confirmed their own contribution entry. Section 7 lists which Hugging Face repositories are live and which are still to be uploaded. Section 11 maps the hackathon's write-up checklist to sections.**
+**Status: release text, 2026-11-14 (revision v7f). All sections are written from reviewed handoffs, and each person confirmed their own contribution entry. Section 7 links every published artifact. Section 11 maps the hackathon's write-up checklist to sections.**
 - Numbers come from saved files, named next to each number.
 - Order: findings first, process last.
 
@@ -345,12 +345,16 @@ The Mudit build scripts on disk are not proven to be the code that ran (Mudit.md
 
 **Artifacts.**
 - Code: https://github.com/Muditkumar123/tiny-aya-unlearning-4bit
+- Hugging Face collections (2026-11-14): [models](https://huggingface.co/collections/Mudit666/tiny-aya-4-bit-compression-models-6af82408a81fe397ad3233fa) (all 7 below) and [evaluation data](https://huggingface.co/collections/Mudit666/tiny-aya-4-bit-compression-evaluation-data-6af82407c9b6f21539a347db).
 - Live on Hugging Face (2026-11-14):
   - data (numbers and ids, no text): https://huggingface.co/datasets/Mudit666/tiny-aya-compression-evaluation
   - plain-q4: https://huggingface.co/Mudit666/tiny-aya-global-qint4
   - random30-q4: https://huggingface.co/Mudit666/tiny-aya-global-qint4-random77-bf16
   - protected-q4: https://huggingface.co/Mudit666/tiny-aya-global-qint4-refusalmask77-bf16
-- Not yet uploaded when this revision was written (these names may not resolve yet): C0v2 `Mudit666/tiny-aya-tofu-c0v2`, C2 `Mudit666/tiny-aya-tofu-npo-c2`, C1 `Mudit666/tiny-aya-tofu-c0v2-qint4`, C3 `Mudit666/tiny-aya-tofu-npo-c2-qint4`, and the model and data collections.
+  - C0v2: https://huggingface.co/Mudit666/tiny-aya-tofu-c0v2
+  - C2: https://huggingface.co/Mudit666/tiny-aya-tofu-npo-c2
+  - C1: https://huggingface.co/Mudit666/tiny-aya-tofu-c0v2-qint4
+  - C3: https://huggingface.co/Mudit666/tiny-aya-tofu-npo-c2-qint4
 
 ## 8. Contributions
 
@@ -373,8 +377,8 @@ We enter as one team of three.
 | Ganesh | [@ShGanesh](https://github.com/ShGanesh) | [@ShGanesh](https://huggingface.co/ShGanesh) |
 
 **Declaration of work done outside the hackathon.** The hackathon's work period started on 2026-11-01 (https://hackathon.lexsi.ai/).
-- **Mudit, Vedika and Ganesh:** all of their submitted work was done during the hackathon (Mudit's statement for all three, 2026-11-14, and Vedika's own statement the same day).
-- **Ganesh:** Ganesh's files in this repository were last modified on the lab machine between 2026-11-06 and 2026-11-13, which fits; file times are not proof of when or by whom work was done. Ganesh's own statement had not been received when this was written.
+- **Mudit, Vedika and Ganesh:** all of their submitted work was done during the hackathon (Mudit's statement for all three, 2026-11-14, and Vedika's and Ganesh's own statements the same day).
+- File times fit these statements: the earliest of Ganesh's files here was last modified on the lab machine on 2026-11-06, and Vedika's on 2026-11-05. File times are not proof of when or by whom work was done.
 - **Earlier work by others that we used, not ours:** the Tiny Aya Global base model; the datasets in section 4; the Lexsi toolkits SafeTune, CircuitKIT and AuditKIT; the NPO and EAP-IG methods; optimum-quanto, Transformers and PEFT; and the WildGuard judge.
 
 ## 10. With more credits
@@ -407,7 +411,7 @@ Where each item of the hackathon's write-up checklist is answered.
 | Results before vs after | At a glance; section 1 |
 | Limitations | Section 6; Appendix B, Limits |
 | With more credits | Section 10 |
-| Artifacts: Hugging Face models and data, GitHub repository | Section 7, Artifacts (collections and four model repositories still to come) |
+| Artifacts: Hugging Face models and data, GitHub repository | Section 7, Artifacts |
 | Repository layout and run instructions | Section 7 |
 | Declaration of work done outside the hackathon | Section 9 |
 | Teammates tagged | Section 9; contributions in section 8 |
