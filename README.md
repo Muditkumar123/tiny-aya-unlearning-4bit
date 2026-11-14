@@ -1,6 +1,6 @@
 # Compressing Tiny Aya to 4 bits: refusal shows no detected change, while a model after NPO unlearning loses retained-set overlap and its forget measures disagree
 
-**Status: release text, 2026-11-14 (revision v7f). All sections are written from reviewed handoffs, and each person confirmed their own contribution entry. Section 7 links every published artifact. Section 11 maps the hackathon's write-up checklist to sections.**
+**Status: release text, 2026-11-14 (revision v7g). All sections are written from reviewed handoffs, and each person confirmed their own contribution entry. Section 7 links every published artifact. Section 11 maps the hackathon's write-up checklist to sections.**
 - Numbers come from saved files, named next to each number.
 - Order: findings first, process last.
 
@@ -305,11 +305,24 @@ In the public copies of 16 files (the R1 reports, `Mudit/out/study_s_metadata.js
   - The repository ships no dataset text. These builders rebuild all 8 `common/data` files; in a staged copy (2026-11-13) all 8 were byte-identical to ours.
   - The harnesses and Ganesh's scripts read 5 of them.
 - **Numbers only, CPU, about a minute.** `python Vedika/release/reproduce.py [export dir]` (md5 a10af8b8) recomputes every Study U and Study S table from the text-free numeric export and exits non-zero on any difference. The AI auditor ran it and it passes (audit.md 21:09).
-- **Fresh generation and scoring, GPU.** Give each launcher a new, empty output folder:
-  - `python Ganesh/scripts/r2_rescore.py <label> <checkpoint> --out <new dir>` for C0v2 and C2;
-  - `Mudit/out/r4_rescore/run.sh <new dir>` for C1 and C3;
-  - `Mudit/out/r4a_original/run.sh <new dir>` for the original;
-  - `python Vedika/scripts/evaluate.py <label> <checkpoint> --out <new dir>` for the Study S safety sets, and `python Vedika/scripts/mmlu_only.py <label> <checkpoint> --out <new dir>` for its utility rows, for plain-q4, random30-q4 and protected-q4. Give all three `evaluate.py` calls the same `--out`; the first call also scores the original. Run `python Vedika/scripts/mmlu_only.py original --out <new dir>` first: it compares the original's fresh rows with the shipped numeric rows in `Vedika/release/export/study_u/original/` (same ids and order, log-prob gap below 1e-6, same predictions) and stops on any difference. `Vedika/scripts/test_mmlu_only.py` checks that comparison on CPU. Settings are in Appendix B.
+- **Fresh generation and scoring, GPU.**
+  - **Checkpoints.** Download each pinned snapshot into a folder you choose, written `<ckpt>/<label>` below, for example `hf download Mudit666/tiny-aya-tofu-c0v2-qint4 --revision 3788b0d114af2d79b9ee77ebf4f99f925b44e781 --local-dir <ckpt>/c1`. Then compare `sha256sum <ckpt>/<label>/*.safetensors` with the artifact identity table below.
+
+    | Label | Repository | Revision |
+    | --- | --- | --- |
+    | original | `CohereLabs/tiny-aya-global` (gated: accept its terms on the model page, then `hf auth login`) | `af89d219b53ed9b13b8a4645f9c8028973510324` |
+    | c0v2 | `Mudit666/tiny-aya-tofu-c0v2` | `9cffda0400777f3a39d443e5c757106393770ed5` |
+    | c2 | `Mudit666/tiny-aya-tofu-npo-c2` | `97c413e53f87b749049ee9e5c7551171773858e3` |
+    | c1 | `Mudit666/tiny-aya-tofu-c0v2-qint4` | `3788b0d114af2d79b9ee77ebf4f99f925b44e781` |
+    | c3 | `Mudit666/tiny-aya-tofu-npo-c2-qint4` | `f531a5ed35e4d6ee2fed18406fb56d0ca2351212` |
+    | plain-q4 | `Mudit666/tiny-aya-global-qint4` | `fb9f9b12d28d0ccbdbef22263146ae57ae94f6c5` |
+    | random30-q4 | `Mudit666/tiny-aya-global-qint4-random77-bf16` | `1bf0d7df9885ac8d7d1a8ee1703f1a8fc553d31e` |
+    | protected-q4 | `Mudit666/tiny-aya-global-qint4-refusalmask77-bf16` | `63c5e7b34f8196cfd89638077cb3906a6ffab3b8` |
+
+  - **Runtime.** The scorers read the tokenizer from `CohereLabs/tiny-aya-global` on the Hub or in your Hugging Face cache (our runs used revision af89d219), so log in before the first run and do not set `HF_HUB_OFFLINE=1` until it is cached. Folders that contain `quanto_qmap.json` (the qint4 models) load through CircuitKIT; set `CUDA_HOME` to your CUDA toolkit for quanto's kernels.
+  - **Scoring.** Give each command a new, empty output folder:
+    - `python Ganesh/scripts/r2_rescore.py <label> <ckpt>/<label> --out <new dir>` for the TOFU rows of c0v2, c2, c1, c3 and original. This is the command that the archived launchers in A ran (`Mudit/out/r4_rescore/run.sh` for C1/C3, `Mudit/out/r4a_original/run.sh` for the original). Those launchers are lab records with fixed paths, not fresh-run instructions.
+    - `python Vedika/scripts/evaluate.py <label> <ckpt>/<label> --out <new dir>` for the Study S safety sets, and `python Vedika/scripts/mmlu_only.py <label> <ckpt>/<label> --out <new dir>` for its utility rows, for plain-q4, random30-q4 and protected-q4. Give all three `evaluate.py` calls the same `--out`; the first call also scores the original. Run `python Vedika/scripts/mmlu_only.py original --out <new dir>` first: it compares the original's fresh rows with the shipped numeric rows in `Vedika/release/export/study_u/original/` (same ids and order, log-prob gap below 1e-6, same predictions) and stops on any difference. `Vedika/scripts/test_mmlu_only.py` checks that comparison on CPU. Settings are in Appendix B.
 - **Contrasts on fresh rows.** `Vedika/scripts/r4_contrasts.py` reads fixed source paths (its `SOURCES`, line 27). To run it on fresh rows, point `SOURCES` at the new folders. Alternatively, compare the fresh rows with the archived ones using `Ganesh/scripts/compare_regen.py`; if they match, the archived contrasts apply.
 - This fresh path was not itself run end to end in this revision. What was run is A, plus the CPU check above.
 - **Rebuilding C1/C3 (current portable recipe).** `python Mudit/scripts/build_qint4.py <bf16 source dir> <new out dir> --expect-source-sha <sha256>` needs no git and no fixed paths. It records the source and output hashes, library versions and its own sha256. Its CPU test `Mudit/scripts/test_build_qint4.py` builds a tiny model, and the R1 checker accepts the result. This recipe is new; it is not the code that built the released C1/C3, and it has not been run on the real models. A rebuild is expected to match R1's precision checks, not the released file hashes.
