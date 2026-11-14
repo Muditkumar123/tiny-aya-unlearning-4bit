@@ -1,0 +1,356 @@
+{
+ "zero": "original",
+ "one": "c0v2",
+ "models": {
+  "c0v2": {
+   "size_mb": 6388.14453125,
+   "limit": null,
+   "forget_rougeL": {
+    "point": 1.0,
+    "ci_low": 1.0,
+    "ci_high": 1.0,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_lp": {
+    "point": -0.003160625028825072,
+    "ci_low": -0.0034660469433041934,
+    "ci_high": -0.0028708184035114827,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_retention": {
+    "point": 1.0,
+    "ci_low": 1.0,
+    "ci_high": 1.0,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_truth_ratio_tofu": 0.4273413841056112,
+   "retain_rougeL": {
+    "point": 0.998625,
+    "ci_low": 0.9965,
+    "ci_high": 1.0,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_lp": {
+    "point": -0.004015495416966315,
+    "ci_low": -0.0050421679456758035,
+    "ci_high": -0.003316349102511407,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_retention": {
+    "point": 1.0,
+    "ci_low": 1.0,
+    "ci_high": 1.0,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_truth_ratio_tofu": 0.5440455817548081,
+   "mmlu_en": {
+    "point": 0.538,
+    "ci_low": 0.496,
+    "ci_high": 0.582,
+    "n": 500,
+    "n_clusters": 500,
+    "nan_resamples": 0
+   },
+   "mmlu_hi": {
+    "point": 0.51,
+    "ci_low": 0.44,
+    "ci_high": 0.58,
+    "n": 200,
+    "n_clusters": 200,
+    "nan_resamples": 0
+   }
+  },
+  "c1": {
+   "size_mb": 2448.95703125,
+   "limit": null,
+   "forget_rougeL": {
+    "point": 0.8697533321540678,
+    "ci_low": 0.8457313458125255,
+    "ci_high": 0.8936256963057507,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_lp": {
+    "point": -0.06788666671496862,
+    "ci_low": -0.08129974433622204,
+    "ci_high": -0.05564536409167369,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_retention": {
+    "point": 0.780081233669087,
+    "ci_low": 0.7484455591871592,
+    "ci_high": 0.8142552905966789,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_truth_ratio_tofu": 0.44833397703232175,
+   "retain_rougeL": {
+    "point": 0.8621526560836783,
+    "ci_low": 0.829914562774729,
+    "ci_high": 0.8924434074430755,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_lp": {
+    "point": -0.07756438785332931,
+    "ci_low": -0.09078003141650719,
+    "ci_high": -0.06495982828423648,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_retention": {
+    "point": 0.7812768939062219,
+    "ci_low": 0.7352924061980008,
+    "ci_high": 0.8263973562976363,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_truth_ratio_tofu": 0.5226523239293086,
+   "mmlu_en": {
+    "point": 0.5,
+    "ci_low": 0.456,
+    "ci_high": 0.544,
+    "n": 500,
+    "n_clusters": 500,
+    "nan_resamples": 0
+   },
+   "mmlu_hi": {
+    "point": 0.515,
+    "ci_low": 0.445,
+    "ci_high": 0.585,
+    "n": 200,
+    "n_clusters": 200,
+    "nan_resamples": 0
+   }
+  },
+  "c2": {
+   "size_mb": 6388.14453125,
+   "limit": null,
+   "forget_rougeL": {
+    "point": 0.4967327937709532,
+    "ci_low": 0.46408949674404454,
+    "ci_high": 0.5290113256388174,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_lp": {
+    "point": -1.7399076653605414,
+    "ci_low": -1.9033262223152796,
+    "ci_high": -1.5813394878392444,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_retention": {
+    "point": 0.15024387986940874,
+    "ci_low": 0.11939887635501555,
+    "ci_high": 0.18206437978552595,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_truth_ratio_tofu": 0.4415588976398951,
+   "retain_rougeL": {
+    "point": 0.8789141488648653,
+    "ci_low": 0.8548331591347644,
+    "ci_high": 0.900934690849708,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_lp": {
+    "point": -0.11931348214490287,
+    "ci_low": -0.15699372232038186,
+    "ci_high": -0.08715573654610474,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_retention": {
+    "point": 0.8081404008898608,
+    "ci_low": 0.773716986745243,
+    "ci_high": 0.8410832561205984,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_truth_ratio_tofu": 0.5288661585363745,
+   "mmlu_en": {
+    "point": 0.522,
+    "ci_low": 0.478,
+    "ci_high": 0.566,
+    "n": 500,
+    "n_clusters": 500,
+    "nan_resamples": 0
+   },
+   "mmlu_hi": {
+    "point": 0.5,
+    "ci_low": 0.43,
+    "ci_high": 0.57,
+    "n": 200,
+    "n_clusters": 200,
+    "nan_resamples": 0
+   }
+  },
+  "c3": {
+   "size_mb": 2448.95703125,
+   "limit": null,
+   "forget_rougeL": {
+    "point": 0.46249677593873506,
+    "ci_low": 0.4285720059067606,
+    "ci_high": 0.4960512340060361,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_lp": {
+    "point": -1.5246027908517579,
+    "ci_low": -1.6378746084626703,
+    "ci_high": -1.4081081210192476,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_retention": {
+    "point": 0.09243708196613555,
+    "ci_low": 0.0648719050273671,
+    "ci_high": 0.12032600952498695,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_truth_ratio_tofu": 0.46315329417494105,
+   "retain_rougeL": {
+    "point": 0.5861909881033811,
+    "ci_low": 0.5338250106977039,
+    "ci_high": 0.637523068474572,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_lp": {
+    "point": -0.42417563412012255,
+    "ci_low": -0.48309197519682684,
+    "ci_high": -0.3669286340745658,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_retention": {
+    "point": 0.3389953923847131,
+    "ci_low": 0.2735756362726356,
+    "ci_high": 0.40679884260380667,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_truth_ratio_tofu": 0.5109030873034243,
+   "mmlu_en": {
+    "point": 0.48,
+    "ci_low": 0.436,
+    "ci_high": 0.524,
+    "n": 500,
+    "n_clusters": 500,
+    "nan_resamples": 0
+   },
+   "mmlu_hi": {
+    "point": 0.51,
+    "ci_low": 0.44,
+    "ci_high": 0.58,
+    "n": 200,
+    "n_clusters": 200,
+    "nan_resamples": 0
+   }
+  },
+  "original": {
+   "size_mb": 6388.14453125,
+   "limit": null,
+   "forget_rougeL": {
+    "point": 0.40775100725169916,
+    "ci_low": 0.38221882337012636,
+    "ci_high": 0.43375828120817317,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_lp": {
+    "point": -2.269331619831858,
+    "ci_low": -2.407013471054095,
+    "ci_high": -2.1235849090090726,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_retention": {
+    "point": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "forget_truth_ratio_tofu": 0.7239151426649599,
+   "retain_rougeL": {
+    "point": 0.3746747171350118,
+    "ci_low": 0.3515946822730794,
+    "ci_high": 0.3972034551955619,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_lp": {
+    "point": -2.263708428850085,
+    "ci_low": -2.3887144834695024,
+    "ci_high": -2.135428655985719,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_retention": {
+    "point": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n": 400,
+    "n_clusters": 20,
+    "nan_resamples": 0
+   },
+   "retain_truth_ratio_tofu": 0.2177038553364862,
+   "mmlu_en": {
+    "point": 0.562,
+    "ci_low": 0.518,
+    "ci_high": 0.606,
+    "n": 500,
+    "n_clusters": 500,
+    "nan_resamples": 0
+   },
+   "mmlu_hi": {
+    "point": 0.515,
+    "ci_low": 0.445,
+    "ci_high": 0.585,
+    "n": 200,
+    "n_clusters": 200,
+    "nan_resamples": 0
+   }
+  }
+ }
+}

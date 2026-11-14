@@ -1,0 +1,51 @@
+{
+ "label": "original",
+ "size_mb": 6388.14453125,
+ "limit": null,
+ "spec": {
+  "model": "tiny-aya-original@~/.cache/huggingface/hub/models--CohereLabs--tiny-aya-global/snapshots/af89d219b53ed9b13b8a4645f9c8028973510324#95c1ef29945a",
+  "generation": {
+   "max_tokens": 128,
+   "temperature": 0
+  },
+  "batch_size": 16,
+  "stop_ids": [
+   6,
+   3
+  ],
+  "tokenizer": {
+   "name": "CohereLabs/tiny-aya-global",
+   "vocab": 261008,
+   "chat_template_md5": "129bc8ce1e71ca856b823478bfff2c70"
+  },
+  "scoring": "v1: rouge_score rougeL recall stemmed; lp = mean per token of gold tokens, fp32 log_softmax; TOFU truth ratio; MMLU first-letter",
+  "prompts": {
+   "forget": "143f081ae0c6d58eebd2d230c5418fab",
+   "retain": "00efdae19470daef22f7e54581c7487b",
+   "mmlu_en": "82865ec850579ba8026c39ffabc02f3b",
+   "mmlu_hi": "4107ec4c1fa2417d8e3d75715e3f258f"
+  }
+ },
+ "sets": {
+  "forget": {
+   "n": 400,
+   "rougeL_recall": 0.40775100725169905,
+   "lp_answer": -2.269331619831858,
+   "truth_ratio_tofu": 0.7239151426649599
+  },
+  "retain": {
+   "n": 400,
+   "rougeL_recall": 0.3746747171350118,
+   "lp_answer": -2.263708428850085,
+   "truth_ratio_tofu": 0.2177038553364862
+  },
+  "mmlu_en": {
+   "n": 500,
+   "accuracy": 0.562
+  },
+  "mmlu_hi": {
+   "n": 200,
+   "accuracy": 0.515
+  }
+ }
+}

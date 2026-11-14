@@ -1,0 +1,36 @@
+{
+ "label": "plain-q4",
+ "size_mb": 2448.95703125,
+ "spec": {
+  "model": "tiny-aya-plain-q4@~/Lexsi/Mudit/out/plain-q4#24f10d8c58e3",
+  "generation": {
+   "max_tokens": 128,
+   "temperature": 0
+  },
+  "batch_size": 16,
+  "stop_ids": [
+   6,
+   3
+  ],
+  "tokenizer": {
+   "name": "CohereLabs/tiny-aya-global",
+   "vocab": 261008,
+   "chat_template_md5": "129bc8ce1e71ca856b823478bfff2c70"
+  },
+  "scoring": "v1: rouge_score rougeL recall stemmed; lp = mean per token of gold tokens, fp32 log_softmax; TOFU truth ratio; MMLU first-letter",
+  "prompts": {
+   "mmlu_en": "82865ec850579ba8026c39ffabc02f3b",
+   "mmlu_hi": "4107ec4c1fa2417d8e3d75715e3f258f"
+  }
+ },
+ "sets": {
+  "mmlu_en": {
+   "n": 500,
+   "accuracy": 0.548
+  },
+  "mmlu_hi": {
+   "n": 200,
+   "accuracy": 0.495
+  }
+ }
+}
