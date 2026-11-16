@@ -1,0 +1,27 @@
+{
+ "ckpt": "c1-q4",
+ "kind": "quanto",
+ "bytes": 2568072456,
+ "sha256_status": "new reference: no output hash is recorded in this checkpoint's provenance",
+ "versions": {
+  "torch": "2.11.0+cu128",
+  "optimum-quanto": "0.2.7"
+ },
+ "recorded": {
+  "bytes": 2568072456,
+  "source": "c0v2-target-merged"
+ },
+ "source": {
+  "dir": "c0v2-target-merged"
+ },
+ "header_unquantized_dtypes": [],
+ "checks": {
+  "decoder_linears": 252,
+  "qint4": 252,
+  "bf16": 0,
+  "qmap_entries": 252,
+  "excluded_params_compared": 38
+ },
+ "failures": [],
+ "pass": true
+}

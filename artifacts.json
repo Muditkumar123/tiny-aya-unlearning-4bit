@@ -1,0 +1,35 @@
+{
+  "models": {
+    "original": {
+      "repo_id": "CohereLabs/tiny-aya-global"
+    },
+    "c0v2": {
+      "repo_id": "Mudit666/tiny-aya-tofu-c0v2"
+    },
+    "c2": {
+      "repo_id": "Mudit666/tiny-aya-tofu-npo-c2"
+    },
+    "c1": {
+      "repo_id": "Mudit666/tiny-aya-tofu-c0v2-qint4"
+    },
+    "c3": {
+      "repo_id": "Mudit666/tiny-aya-tofu-npo-c2-qint4"
+    },
+    "plain-q4": {
+      "repo_id": "Mudit666/tiny-aya-global-qint4"
+    },
+    "random30-q4": {
+      "repo_id": "Mudit666/tiny-aya-global-qint4-random77-bf16"
+    },
+    "protected-q4": {
+      "repo_id": "Mudit666/tiny-aya-global-qint4-refusalmask77-bf16"
+    }
+  },
+  "dataset": {
+    "repo_id": "Mudit666/tiny-aya-compression-evaluation"
+  },
+  "collections": {
+    "models": "https://huggingface.co/collections/Mudit666/tiny-aya-4-bit-compression-models-6af82408a81fe397ad3233fa",
+    "data": "https://huggingface.co/collections/Mudit666/tiny-aya-4-bit-compression-evaluation-data-6af82407c9b6f21539a347db"
+  }
+}

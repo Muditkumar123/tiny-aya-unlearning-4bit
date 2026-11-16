@@ -1,0 +1,151 @@
+{
+  "paper_reference": {
+    "floor_over_typical": 0.093,
+    "share_of_circuit_changed": 0.29
+  },
+  "lr_times_steps": 2.9999999999999997e-05,
+  "range_over_15_matrices": {
+    "typical_abs_weight": [
+      0.020928338170051575,
+      0.02416389435529709
+    ],
+    "std": [
+      0.02691483497619629,
+      0.03096361644566059
+    ],
+    "tensor_range_floor_over_typical": [
+      1.009006619020726,
+      3.769817198046791
+    ],
+    "nf4_block_floor_median_over_typical": [
+      0.18117939700723631,
+      0.19364997434155815
+    ],
+    "max_training_move_over_typical": [
+      0.0012415217331648177,
+      0.0014334630755790233
+    ]
+  },
+  "matrices": [
+    {
+      "matrix": "13.gate_proj",
+      "typical_abs_weight": 0.023968102410435677,
+      "std": 0.030682150274515152,
+      "tensor_range_floor_over_typical": 1.6603284312434075,
+      "nf4_block_floor_median_over_typical": 0.1815178138383965,
+      "max_training_move_over_typical": 0.0012516635437496313
+    },
+    {
+      "matrix": "13.up_proj",
+      "typical_abs_weight": 0.022236516699194908,
+      "std": 0.028211353346705437,
+      "tensor_range_floor_over_typical": 1.5919935259591131,
+      "nf4_block_floor_median_over_typical": 0.18457814069680376,
+      "max_training_move_over_typical": 0.0013491321687576262
+    },
+    {
+      "matrix": "13.down_proj",
+      "typical_abs_weight": 0.021497448906302452,
+      "std": 0.027575423941016197,
+      "tensor_range_floor_over_typical": 2.589333401494019,
+      "nf4_block_floor_median_over_typical": 0.19092381267190897,
+      "max_training_move_over_typical": 0.0013955144226999341
+    },
+    {
+      "matrix": "14.gate_proj",
+      "typical_abs_weight": 0.023249005898833275,
+      "std": 0.029709650203585625,
+      "tensor_range_floor_over_typical": 1.9742107554931354,
+      "nf4_block_floor_median_over_typical": 0.18242447051547003,
+      "max_training_move_over_typical": 0.0012903777533776408
+    },
+    {
+      "matrix": "14.up_proj",
+      "typical_abs_weight": 0.022324129939079285,
+      "std": 0.02836993709206581,
+      "tensor_range_floor_over_typical": 1.7060435324437455,
+      "nf4_block_floor_median_over_typical": 0.18507944731057765,
+      "max_training_move_over_typical": 0.0013438373670941503
+    },
+    {
+      "matrix": "14.down_proj",
+      "typical_abs_weight": 0.021557806059718132,
+      "std": 0.027675123885273933,
+      "tensor_range_floor_over_typical": 3.0803807129559204,
+      "nf4_block_floor_median_over_typical": 0.19038926765279976,
+      "max_training_move_over_typical": 0.0013916072867942038
+    },
+    {
+      "matrix": "15.gate_proj",
+      "typical_abs_weight": 0.022982023656368256,
+      "std": 0.02940962463617325,
+      "tensor_range_floor_over_typical": 3.2081800041820725,
+      "nf4_block_floor_median_over_typical": 0.18216246784423887,
+      "max_training_move_over_typical": 0.001305368075873818
+    },
+    {
+      "matrix": "15.up_proj",
+      "typical_abs_weight": 0.0216493122279644,
+      "std": 0.02748960815370083,
+      "tensor_range_floor_over_typical": 1.8381610212816335,
+      "nf4_block_floor_median_over_typical": 0.1845289543406001,
+      "max_training_move_over_typical": 0.001385725314693786
+    },
+    {
+      "matrix": "15.down_proj",
+      "typical_abs_weight": 0.020928338170051575,
+      "std": 0.02691483497619629,
+      "tensor_range_floor_over_typical": 2.613083731524261,
+      "nf4_block_floor_median_over_typical": 0.1908859134040643,
+      "max_training_move_over_typical": 0.0014334630755790233
+    },
+    {
+      "matrix": "16.gate_proj",
+      "typical_abs_weight": 0.02255139872431755,
+      "std": 0.0291121955960989,
+      "tensor_range_floor_over_typical": 2.370886060266668,
+      "nf4_block_floor_median_over_typical": 0.18442757981001373,
+      "max_training_move_over_typical": 0.0013302944250482562
+    },
+    {
+      "matrix": "16.up_proj",
+      "typical_abs_weight": 0.022414464503526688,
+      "std": 0.02865646593272686,
+      "tensor_range_floor_over_typical": 2.069499306695528,
+      "nf4_block_floor_median_over_typical": 0.18555428292307072,
+      "max_training_move_over_typical": 0.001338421446351297
+    },
+    {
+      "matrix": "16.down_proj",
+      "typical_abs_weight": 0.021760007366538048,
+      "std": 0.027963116765022278,
+      "tensor_range_floor_over_typical": 3.769817198046791,
+      "nf4_block_floor_median_over_typical": 0.19364997434155815,
+      "max_training_move_over_typical": 0.001378676003857112
+    },
+    {
+      "matrix": "17.gate_proj",
+      "typical_abs_weight": 0.02416389435529709,
+      "std": 0.03096361644566059,
+      "tensor_range_floor_over_typical": 1.4448047513229896,
+      "nf4_block_floor_median_over_typical": 0.18117939700723631,
+      "max_training_move_over_typical": 0.0012415217331648177
+    },
+    {
+      "matrix": "17.up_proj",
+      "typical_abs_weight": 0.02201848477125168,
+      "std": 0.027943477034568787,
+      "tensor_range_floor_over_typical": 1.009006619020726,
+      "nf4_block_floor_median_over_typical": 0.18516317962041384,
+      "max_training_move_over_typical": 0.001362491575222712
+    },
+    {
+      "matrix": "17.down_proj",
+      "typical_abs_weight": 0.021436065435409546,
+      "std": 0.027426354587078094,
+      "tensor_range_floor_over_typical": 3.6673372493135448,
+      "nf4_block_floor_median_over_typical": 0.18891759497410587,
+      "max_training_move_over_typical": 0.0013995105627194048
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+ "label": "protected-q4",
+ "size_mb": 3652.59765625,
+ "spec": {
+  "model": "tiny-aya-protected-q4@refusal_circuit_matched/tiny-aya-refusal-protected-q4",
+  "generation": {
+   "max_tokens": 128,
+   "temperature": 0
+  },
+  "batch_size": 16,
+  "stop_ids": [
+   6,
+   3
+  ],
+  "tokenizer": {
+   "name": "CohereLabs/tiny-aya-global",
+   "vocab": 261008
+  },
+  "scoring": "v1: rouge_score rougeL recall stemmed; lp = mean per token of gold tokens, fp32 log_softmax; TOFU truth ratio; MMLU first-letter"
+ },
+ "sets": {
+  "mmlu_en": {
+   "n": 500,
+   "accuracy": 0.558
+  },
+  "mmlu_hi": {
+   "n": 200,
+   "accuracy": 0.535
+  }
+ }
+}

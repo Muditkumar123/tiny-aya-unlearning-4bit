@@ -1,0 +1,35 @@
+{
+  "precheck": {
+    "share_of_circuit_weights_moved": 0.07792623061542363,
+    "moved": 26351983,
+    "of_which_were_below_floor": 26351983,
+    "median_move_over_typical_weight": [
+      0.10132642090320587,
+      0.20320861041545868
+    ],
+    "largest_prefloor_move": 5.02169132232666e-06,
+    "paper_reference": {
+      "share": 0.29,
+      "move_over_typical": 0.093
+    }
+  },
+  "baseline": {
+    "forget_accuracy": 0.775,
+    "utility_accuracy": 0.47
+  },
+  "gate_passed": false,
+  "variants": {
+    "gradient_signs": {
+      "forget_accuracy": 0.275,
+      "utility_accuracy": 0.25,
+      "utility_drop_points": 22.0,
+      "within_utility_bound": false
+    },
+    "random_signs": {
+      "forget_accuracy": 0.8,
+      "utility_accuracy": 0.47,
+      "utility_drop_points": 0.0,
+      "within_utility_bound": true
+    }
+  }
+}

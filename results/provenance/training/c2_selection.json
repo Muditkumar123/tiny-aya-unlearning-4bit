@@ -1,0 +1,29 @@
+{
+ "zero": {
+  "forget": 0.40775100725169905,
+  "retain": 0.3746747171350118
+ },
+ "one": {
+  "forget": 1.0,
+  "retain": 0.998625
+ },
+ "grid": [
+  {
+   "lr": 1e-05,
+   "forget_rougeL": 0.5254876783802431,
+   "retain_rougeL": 0.6107671879117822,
+   "forget_retention": 0.19879589930950006,
+   "retain_retention": 0.3783834662157796
+  },
+  {
+   "lr": 3e-05,
+   "forget_rougeL": 0.4967327937709532,
+   "retain_rougeL": 0.8789141488648653,
+   "forget_retention": 0.15024387986940888,
+   "retain_retention": 0.8081404008898608
+  }
+ ],
+ "rule": "C2 = the smallest lr in lr_grid whose merged model has forget retention <= 0.25 (all 20 forget10 authors) and retain retention >= 0.50. If no lr meets both, C2 = the lr with the lowest forget retention among those with retain retention >= 0.50, and the entry says the target was missed. If every lr has retain retention < 0.50, stop and report (no C2).",
+ "chosen_lr": 3e-05,
+ "target_met": true
+}

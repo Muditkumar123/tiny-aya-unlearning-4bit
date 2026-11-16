@@ -1,0 +1,28 @@
+{
+ "fresh": "r2_rescore/c2",
+ "saved": "tofu_v2/c2",
+ "first": 20,
+ "sets": {
+  "forget": {
+   "n_fresh": 400,
+   "match_first": 20,
+   "match_all": 400,
+   "mismatched_ids": [],
+   "lp_max_abs_diff": 0.0
+  },
+  "retain": {
+   "n_fresh": 400,
+   "match_first": 20,
+   "match_all": 400,
+   "mismatched_ids": [],
+   "lp_max_abs_diff": 0.0
+  },
+  "mmlu_en": {
+   "lp_max_abs_diff": 0.0
+  },
+  "mmlu_hi": {
+   "lp_max_abs_diff": 0.0
+  }
+ },
+ "pass": true
+}

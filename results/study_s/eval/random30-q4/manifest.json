@@ -1,0 +1,23 @@
+{
+ "model": "tiny-aya-random30-q4@random30-q4",
+ "generation": {
+  "max_tokens": 256,
+  "temperature": 0
+ },
+ "batch_size": 16,
+ "stop_ids": [
+  6,
+  3
+ ],
+ "tokenizer": {
+  "name": "CohereLabs/tiny-aya-global",
+  "vocab": 261008
+ },
+ "judge": {
+  "model": "allenai/wildguard",
+  "via": "auditkit GuardJudge, wildguard profile without leading <s>",
+  "dtype": "bfloat16",
+  "max_new_tokens": 32
+ },
+ "reference": "tiny-aya-original@~/.cache/huggingface/hub/models--CohereLabs--tiny-aya-global/snapshots"
+}

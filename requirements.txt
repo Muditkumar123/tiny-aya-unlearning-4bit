@@ -1,4 +1,4 @@
-# Exact versions of the environment used for all re-verification and rescoring (R1-R5), Python 3.12.16 on Linux. The historical training and builds may have used other versions; see WRITEUP section 7.
+# Exact versions of the environment used for evaluation, Python 3.12.16 on Linux. See docs/REPRODUCING.md.
 # The list is every third-party package the shipped code imports, plus tokenizers, accelerate, pyarrow (parquet reading) and ninja. Their own dependencies are not pinned.
 # torch is the cu128 build: pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
 torch==2.11.0

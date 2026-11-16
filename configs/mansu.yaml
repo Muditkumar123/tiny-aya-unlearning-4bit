@@ -1,0 +1,17 @@
+# Implementation defaults only. No Tiny Aya run has used these settings.
+# A new experiment must freeze its exact splits/endpoints/stop rules first.
+paper: https://arxiv.org/abs/2605.15138v1
+seed: 0
+circuit_size: 5
+fisher_examples: 100
+max_length: 512
+training:
+  learning_rate: 1.0e-6
+  max_steps: 30
+  kl_weight: 200.0
+  fisher_quantile: 0.99    # Algorithm 1; Table 10 instead gives 0.1 * mean(F).
+  floor_policy: rescale   # Eq. 4/10; Appendix B.3 also describes zeroing.
+  floor_minimum: 1.0e-6
+  evaluate_every: 5
+  max_utility_drop: 0.08  # checkpoint eligibility, not proof of acceptable utility.
+  early_stop_utility_drop: 0.02

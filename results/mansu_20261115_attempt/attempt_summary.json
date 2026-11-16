@@ -1,0 +1,49 @@
+{
+  "status": "rejected_after_magnitude_floor",
+  "training_steps_executed": 30,
+  "selected_step": 5,
+  "validation_counts": {
+    "forget": 40,
+    "utility": 100
+  },
+  "baseline": {
+    "forget_accuracy": 0.775,
+    "utility_accuracy": 0.47
+  },
+  "selected_before_floor": {
+    "forget_accuracy": 0.775,
+    "utility_accuracy": 0.47
+  },
+  "last_step_before_floor": {
+    "forget_accuracy": 0.775,
+    "utility_accuracy": 0.48
+  },
+  "after_floor": {
+    "forget_accuracy": 0.25,
+    "utility_accuracy": 0.25
+  },
+  "utility_drop_percentage_points": 21.999999999999996,
+  "maximum_allowed_drop_percentage_points": 8,
+  "floor_min": 0.022216796875,
+  "floor_max": 0.08203125,
+  "rescaled_coordinates": 334706430,
+  "selected_mlp_layers": [
+    15,
+    14,
+    13,
+    16,
+    17
+  ],
+  "fisher": {
+    "examples": 100,
+    "threshold": 8.079063036348089e-07,
+    "quantile": 0.99,
+    "allowed_coordinates": 334784103,
+    "circuit_coordinates": 338165760
+  },
+  "checkpoint_exported": false,
+  "nf4_comparison_run": false,
+  "final_test_scoring_run": false,
+  "reason": "Post-floor utility violates the frozen bound; no threshold or variant was changed to rescue this run.",
+  "provenance_limit": "Saved validation aggregates and numeric loss history are execution evidence; individual MCQ predictions and rejected checkpoint weights were not saved. Accuracy cannot be independently recomputed from these aggregates alone."
+}

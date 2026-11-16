@@ -1,0 +1,17 @@
+{
+  "forget": {
+    "min": 382,
+    "max": 495,
+    "count": 300
+  },
+  "retain": {
+    "min": 388,
+    "max": 455,
+    "count": 300
+  },
+  "discovery": {
+    "min": 451,
+    "max": 690,
+    "count": 50
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "quantizer": {
+    "type": "nf4",
+    "blocksize": 64,
+    "double_quant": false,
+    "compute_dtype": "bfloat16"
+  },
+  "nf4_linears": 252,
+  "save_reload_module_check": true,
+  "save_reload_tensor_identity": true,
+  "gpu_before_load": "index, name, memory.used [MiB], utilization.gpu [%]\n0, NVIDIA A100-PCIE-40GB, 4 MiB, 0 %\n1, NVIDIA A100-PCIE-40GB, 28091 MiB, 0 %\n",
+  "versions": {
+    "bitsandbytes": "0.50.2",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.22.1"
+  },
+  "behavioral_evaluation_run": false,
+  "quantized_update_survival_verified": false
+}

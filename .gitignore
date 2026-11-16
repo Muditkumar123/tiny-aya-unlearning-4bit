@@ -1,0 +1,20 @@
+# Generated data and private model/judge answers
+/data/prompts/
+/runs/
+/logs/
+/checkpoints/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.env.*
+*.safetensors
+*.bin
+*.pt
+*.gguf
+# Local HF payloads and metadata copies are not GitHub source.
+/HF/models/
+/HF/datasets/
+/HF/local_sources/
+/HF/local_manifest.json

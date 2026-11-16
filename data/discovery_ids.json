@@ -1,0 +1,308 @@
+{
+ "what": "IDs of the 32 harmful/benign pairs used for EAP-IG refusal-mask discovery; no prompt text",
+ "harmbench": {
+  "repo": "walledai/HarmBench",
+  "revision": "fb6c2afd5a2a943d701d6db3efab87d077e81be5",
+  "file": "standard/train-00000-of-00001.parquet",
+  "column": "prompt"
+ },
+ "alpaca": {
+  "repo": "tatsu-lab/alpaca",
+  "revision": "dce01c9b08f87459cf36a430d809084718273017",
+  "file": "data/train-00000-of-00001-a09b74b3ef9c3b56.parquet",
+  "column": "instruction",
+  "filter": "input == ''"
+ },
+ "hash": "sha256 of the UTF-8 prompt text",
+ "source_file_sha256": "83f01545df45092490b8d7fd6603c82dd6188c5d9ef948f5406b832816ad891b",
+ "pairs": [
+  {
+   "pair": 0,
+   "harmbench_row": 0,
+   "harmbench_category": "chemical_biological",
+   "harmbench_sha256": "95866d09954f7879d5efdaca710be27f6f204e5da8d4ca78443a6ba00121484a",
+   "alpaca_row": 140,
+   "alpaca_sha256": "bd9767235b90f9160d60cfc1a652436990c79019bb0bbdc21b27647dbea02b98",
+   "templated_tokens": 383
+  },
+  {
+   "pair": 1,
+   "harmbench_row": 1,
+   "harmbench_category": "chemical_biological",
+   "harmbench_sha256": "f334c31dad4e7cba74efcda28c8dbc5383b610ac8b269566655505ffc4705e7c",
+   "alpaca_row": 216,
+   "alpaca_sha256": "5b584384ec48109a140bc00ffa9307872c0242512182fe9fa0792ac051fdfd5a",
+   "templated_tokens": 383
+  },
+  {
+   "pair": 2,
+   "harmbench_row": 2,
+   "harmbench_category": "chemical_biological",
+   "harmbench_sha256": "4c81b85c77a62920df7329f5826aaf541a02f752bf10d4d6ef51dbd16b783230",
+   "alpaca_row": 54,
+   "alpaca_sha256": "b0cdc8a8c5aca79fd4b450e176f76362b3a2ce09a87d26b3950703a409184c5a",
+   "templated_tokens": 382
+  },
+  {
+   "pair": 3,
+   "harmbench_row": 3,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "25d15203bed7c33983f052bab928ee223ac0f4879fc6a21d367c7382dea7bac4",
+   "alpaca_row": 226,
+   "alpaca_sha256": "b66716f5e53785ec9f9702fd721f49710783d0db40af9c2525db22dd50d47fba",
+   "templated_tokens": 384
+  },
+  {
+   "pair": 4,
+   "harmbench_row": 4,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "b377059dc8ace9cc00a101432b5381cc18a8fbdeb8c2df94f6e758e0165ca71f",
+   "alpaca_row": 7,
+   "alpaca_sha256": "ebae0fa7e0a19f8a6badff44bd8409a297dd11afb61e0be865b46490b4416195",
+   "templated_tokens": 385
+  },
+  {
+   "pair": 5,
+   "harmbench_row": 5,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "1885344ff48ea0ac9de10edc7bfbaf097ea3a816eab71a8ca8a5a233295fdbbe",
+   "alpaca_row": 152,
+   "alpaca_sha256": "bb776cd9fb2abc909b5255600040de9776c27a6125cebbe9590a2adbecdbe0e0",
+   "templated_tokens": 380
+  },
+  {
+   "pair": 6,
+   "harmbench_row": 6,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "1854e6b565b1f4386a9babdd371bc1d13315cc35b5003ebe7901ee7077b61f03",
+   "alpaca_row": 3122,
+   "alpaca_sha256": "0d94947e79e0907fc57c359ecd5848a12be8df2ad31361e3cf9c03609e9b8c97",
+   "templated_tokens": 391
+  },
+  {
+   "pair": 7,
+   "harmbench_row": 7,
+   "harmbench_category": "misinformation_disinformation",
+   "harmbench_sha256": "b5c8a26b187cf5e091ca2c17e0a285c35ff53822855a6a8942f41d82f77634f7",
+   "alpaca_row": 251,
+   "alpaca_sha256": "b2f8a5162ad339baec1ac7bc2d761ce3b65e1b85c7daf8d2e08d0fdf7715c33b",
+   "templated_tokens": 388
+  },
+  {
+   "pair": 8,
+   "harmbench_row": 8,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "dc7b2839aa028adc7161a1f6f3285a3af922141d7081cc9100e82cef98bc83c1",
+   "alpaca_row": 29,
+   "alpaca_sha256": "584a74e3a0c2faac05457a9a63aefaaf80ebd914c6316a0ec2f4ce54692d6e09",
+   "templated_tokens": 378
+  },
+  {
+   "pair": 9,
+   "harmbench_row": 9,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "33f426df50559c8b7e71c016000d10220627b93e5753b891829cac9a034a3b87",
+   "alpaca_row": 18,
+   "alpaca_sha256": "b768b48945123e75516e24b8c3c79861b28cc53f508e52a44c9f8aca1394257a",
+   "templated_tokens": 376
+  },
+  {
+   "pair": 10,
+   "harmbench_row": 10,
+   "harmbench_category": "chemical_biological",
+   "harmbench_sha256": "7fa1cbec548272cb7064c769b6e78382bd8b73c054f250d3cc630f39f26751d6",
+   "alpaca_row": 761,
+   "alpaca_sha256": "71df0d84835197bf3ddaee9907dd0fb98c404e6b41331ed8dc75c4539cd50cf9",
+   "templated_tokens": 389
+  },
+  {
+   "pair": 11,
+   "harmbench_row": 11,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "bbc69912826877e880950c11c00360ea42dbee5b043ab26dfaf14a37f420e853",
+   "alpaca_row": 97,
+   "alpaca_sha256": "4749c591be203d97f43f78b28eba4f715aa54cb55dad832fe2bede5312694f79",
+   "templated_tokens": 382
+  },
+  {
+   "pair": 12,
+   "harmbench_row": 12,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "78a7b9a08cf065a9eaff9adf77fd4d39103b4ddc215894b6a88b15bec17ea61b",
+   "alpaca_row": 44,
+   "alpaca_sha256": "6dc7c9b3aa69a7a671c7a70a1e40ce0e19101fd8c70903789087b9fff2e021d0",
+   "templated_tokens": 387
+  },
+  {
+   "pair": 13,
+   "harmbench_row": 13,
+   "harmbench_category": "misinformation_disinformation",
+   "harmbench_sha256": "5b1324193c4072b4b7761ab2c31ba7407ba09c7967344c55c48aed0e0fe0423a",
+   "alpaca_row": 4,
+   "alpaca_sha256": "280c090c5c69efa1d35f70050f7aaff549bd0f983a9d26b48f8213188150bdb3",
+   "templated_tokens": 377
+  },
+  {
+   "pair": 14,
+   "harmbench_row": 14,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "5f06734d5f8dc0b1b0bcd1f951bce60e1322df516f1c48f266fdea03be69c93c",
+   "alpaca_row": 384,
+   "alpaca_sha256": "f404bb7902ee971ab41a97cfd8762e16d67061f816ad00407916cc9934777695",
+   "templated_tokens": 386
+  },
+  {
+   "pair": 15,
+   "harmbench_row": 15,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "d9e4e0a0689521f21f815a8cb1d61ade014ccaac884c74288a862875286411ec",
+   "alpaca_row": 300,
+   "alpaca_sha256": "f1e3dab57b2af43081612c936293c3d072edcfb972658fd6866633d964ff2d6f",
+   "templated_tokens": 382
+  },
+  {
+   "pair": 16,
+   "harmbench_row": 16,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "1170e1d608b90a63e0313c37f353135aa82ba409afe8d4629ea6a4d6b74db644",
+   "alpaca_row": 204,
+   "alpaca_sha256": "f4163afadc80539c091f1ace12535e60418407951630f8b5adc50afa1f286497",
+   "templated_tokens": 380
+  },
+  {
+   "pair": 17,
+   "harmbench_row": 17,
+   "harmbench_category": "chemical_biological",
+   "harmbench_sha256": "3f9d94923f67af123f89a6c142ba642b464a7b3beba779c89c467ba97329c864",
+   "alpaca_row": 3588,
+   "alpaca_sha256": "26eb93985a2c097912cc8e8d812bc80b9a699abe72bfaf18a6fa24d2ff23000d",
+   "templated_tokens": 396
+  },
+  {
+   "pair": 18,
+   "harmbench_row": 18,
+   "harmbench_category": "chemical_biological",
+   "harmbench_sha256": "01d1464657302976438fb4bb3bdb28e742b22e981cbbca27d6a16a2266d2197d",
+   "alpaca_row": 599,
+   "alpaca_sha256": "a3ee2d090341992ff0e9e4bffabfdb1916fa766889ef484487ccb1ade9a0c77a",
+   "templated_tokens": 388
+  },
+  {
+   "pair": 19,
+   "harmbench_row": 19,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "2c651d8f9578720b0ef468a166dcf2968b88b7b802b2f71e9b2a9ef4a735585a",
+   "alpaca_row": 327,
+   "alpaca_sha256": "901075ed1b5db20190c0a3f0d5ba9f93dc1091593ef63d8c135c32a06a7a50d4",
+   "templated_tokens": 380
+  },
+  {
+   "pair": 20,
+   "harmbench_row": 20,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "e8533da6e8fa2552461177f84eb0215dd4ebd82ad576fac204d8851b28dc7a47",
+   "alpaca_row": 987,
+   "alpaca_sha256": "e88465e35c6d38e6ddc7105f45a3abf2c12190ee60f23dd64207d781705e9759",
+   "templated_tokens": 389
+  },
+  {
+   "pair": 21,
+   "harmbench_row": 21,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "4346a7ba8696358816ba85725885f8e9a8b32b10748877f88f827b9ee1f4007b",
+   "alpaca_row": 90,
+   "alpaca_sha256": "d1cc5f6f937f823ecfc9d14bb840207cef70f95871178c13c4edcc929fa0a446",
+   "templated_tokens": 378
+  },
+  {
+   "pair": 22,
+   "harmbench_row": 22,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "e6e67bd419e6c91119a935a42360b81ecdcba8b1f71af4e6c77252090347f7e0",
+   "alpaca_row": 34,
+   "alpaca_sha256": "2b76042740e19d3fe636f53ac766c9bbc96d59edcc1972e3a1bd0afe1c7d49f1",
+   "templated_tokens": 376
+  },
+  {
+   "pair": 23,
+   "harmbench_row": 23,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "21b333eac373ef9376d1c277ec9c57eb34b10a787c40cc7868a4c7156c2f0ff8",
+   "alpaca_row": 12,
+   "alpaca_sha256": "852abddc0bb34d327930d70414776e2475575025222f7713bdfc477a5e2bc82f",
+   "templated_tokens": 379
+  },
+  {
+   "pair": 24,
+   "harmbench_row": 24,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "fbf192a615a6487be075137840eb8850e4aaa767ae149e2cc1179843d2142bc9",
+   "alpaca_row": 379,
+   "alpaca_sha256": "658eb955960acecd2895cb6561f7093777a1b8628d80ddcaa6dc2461b52bc81b",
+   "templated_tokens": 382
+  },
+  {
+   "pair": 25,
+   "harmbench_row": 25,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "2e63070e43aac8844fd76a0c145df15e7d3f1bb4304b3c9d10a7c6cf267d35c5",
+   "alpaca_row": 21,
+   "alpaca_sha256": "c4840d43246a7590ffb3343e92970ef71571cb2c80a058a36dd8c9effd4f5e2f",
+   "templated_tokens": 379
+  },
+  {
+   "pair": 26,
+   "harmbench_row": 26,
+   "harmbench_category": "misinformation_disinformation",
+   "harmbench_sha256": "3cc69f53ea0505f59837a87d8cc3c1144d098308de3d7085b5b46e59d6033341",
+   "alpaca_row": 391,
+   "alpaca_sha256": "93f65e09c9dd553568fc37776f469aa90a71885335e02db346a41f3407ffb012",
+   "templated_tokens": 380
+  },
+  {
+   "pair": 27,
+   "harmbench_row": 27,
+   "harmbench_category": "harmful",
+   "harmbench_sha256": "f018f9f6b9f1afddb0cd11d5a4b6a6d2776acc8d833525a10e83d3a64c25c738",
+   "alpaca_row": 59,
+   "alpaca_sha256": "6be703937680fe9c41c80c62f0ea5c9d6a3fdaa10079bcbc2eaa6ff8415a932b",
+   "templated_tokens": 376
+  },
+  {
+   "pair": 28,
+   "harmbench_row": 28,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "0f728f00fbf274f7256699020b06c8d8a710a22ff806de3c71df833250a11ef9",
+   "alpaca_row": 1062,
+   "alpaca_sha256": "e6432666c3ac46ecc910f85c245ab9847f4336dd55d325b55b25a6f0320eb4f2",
+   "templated_tokens": 388
+  },
+  {
+   "pair": 29,
+   "harmbench_row": 29,
+   "harmbench_category": "illegal",
+   "harmbench_sha256": "63af67436ca5fbaddcf39297247342bd42be62adfa3c8b969ea8c4d2dbb6a81d",
+   "alpaca_row": 55,
+   "alpaca_sha256": "02e5c80236b5a5271985927052d59d8c2161ed27589d14a62f9a2a419bd6b998",
+   "templated_tokens": 381
+  },
+  {
+   "pair": 30,
+   "harmbench_row": 30,
+   "harmbench_category": "misinformation_disinformation",
+   "harmbench_sha256": "29700e9692d0ebf1cafe71a1ba9647d7065ebc6fea122aa89088c046bd5f82e0",
+   "alpaca_row": 877,
+   "alpaca_sha256": "40f717e7b6d85343c3558dba5cb40d7977fe60fff233e4ed9fb7be9e3ad07a02",
+   "templated_tokens": 394
+  },
+  {
+   "pair": 31,
+   "harmbench_row": 31,
+   "harmbench_category": "misinformation_disinformation",
+   "harmbench_sha256": "71840327b21ef4f68d3cf289da6b7c4a38a5ccde998d1fe44b333038d8113070",
+   "alpaca_row": 259,
+   "alpaca_sha256": "b659dc9dd3529dee3e9b95db68e2458f89f4358d815812a86360fc18500d8051",
+   "templated_tokens": 385
+  }
+ ]
+}

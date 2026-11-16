@@ -1,0 +1,50 @@
+{
+  "started_at_utc": "2026-11-15T17:23:20.071665+00:00",
+  "stages": [
+    {
+      "name": "discovery",
+      "started_at_utc": "2026-11-15T17:23:20.083263+00:00",
+      "command": [
+        "compression/discover_mansu.py",
+        "--checkpoint",
+        "HF/models/c0v2",
+        "--pairs",
+        "runs/mansu_20261115/inputs/discovery.json",
+        "--out",
+        "runs/mansu_20261115/discovery"
+      ],
+      "status": "complete",
+      "pid": 564825,
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-15T17:40:01.134089+00:00"
+    },
+    {
+      "name": "training",
+      "started_at_utc": "2026-11-15T17:40:01.134803+00:00",
+      "command": [
+        "training/run_mansu.py",
+        "--checkpoint",
+        "HF/models/c0v2",
+        "--circuit",
+        "runs/mansu_20261115/discovery/attribution.json",
+        "--forget",
+        "runs/mansu_20261115/inputs/forget.json",
+        "--retain",
+        "runs/mansu_20261115/inputs/retain.json",
+        "--validation",
+        "runs/mansu_20261115/inputs/validation.json",
+        "--out",
+        "runs/mansu_20261115/training",
+        "--reference-device",
+        "cuda:0"
+      ],
+      "status": "failed",
+      "pid": 575638,
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-15T17:45:52.181555+00:00"
+    }
+  ],
+  "status": "failed",
+  "failure": "training failed with exit 1; see retained log",
+  "finished_at_utc": "2026-11-15T17:45:52.182181+00:00"
+}

@@ -1,0 +1,31 @@
+{
+ "ckpt": "random30-q4",
+ "kind": "quanto",
+ "bytes": 3830144028,
+ "sha256_status": "new reference: no output hash is recorded in this checkpoint's provenance",
+ "versions": {
+  "torch": "2.11.0+cu128",
+  "optimum-quanto": "0.2.7"
+ },
+ "recorded": {
+  "bytes": null,
+  "source": null,
+  "source_sha256": null
+ },
+ "source": {
+  "dir": "~/.cache/huggingface/hub/models--CohereLabs--tiny-aya-global/snapshots",
+  "note": "no source hash recorded in the checkpoint: lineage rests on the recorded path and the bitwise weight comparison below"
+ },
+ "header_unquantized_dtypes": [
+  "BF16"
+ ],
+ "checks": {
+  "decoder_linears": 252,
+  "qint4": 175,
+  "bf16": 77,
+  "qmap_entries": 175,
+  "excluded_params_compared": 115
+ },
+ "failures": [],
+ "pass": true
+}

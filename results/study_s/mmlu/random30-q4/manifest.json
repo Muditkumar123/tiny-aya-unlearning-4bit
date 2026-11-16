@@ -1,0 +1,17 @@
+{
+ "model": "tiny-aya-random30-q4@random30-q4",
+ "generation": {
+  "max_tokens": 128,
+  "temperature": 0
+ },
+ "batch_size": 16,
+ "stop_ids": [
+  6,
+  3
+ ],
+ "tokenizer": {
+  "name": "CohereLabs/tiny-aya-global",
+  "vocab": 261008
+ },
+ "scoring": "v1: rouge_score rougeL recall stemmed; lp = mean per token of gold tokens, fp32 log_softmax; TOFU truth ratio; MMLU first-letter"
+}

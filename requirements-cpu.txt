@@ -1,0 +1,9 @@
+# Dependencies imported by numeric table reproduction. Use a CPU torch wheel:
+# python -m pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cpu
+# python -m pip install -r requirements-cpu.txt
+numpy==2.4.6
+scikit-learn==1.9.1
+torch==2.11.0
+transformers==5.22.1
+auditkit==1.1.3
+rouge_score==0.1.2

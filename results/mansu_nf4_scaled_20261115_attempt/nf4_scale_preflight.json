@@ -1,0 +1,8 @@
+{
+  "synthetic_bf16_blocks": 2,
+  "block_size": 64,
+  "matches_bitsandbytes_absmax": true,
+  "margin": 0.704,
+  "normalized_spacing": 0.0796,
+  "bitsandbytes_version": "0.50.2"
+}

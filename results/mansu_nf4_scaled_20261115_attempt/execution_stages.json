@@ -1,0 +1,35 @@
+{
+  "started_at_utc": "2026-11-15T17:50:44.554260+00:00",
+  "stages": [
+    {
+      "name": "training",
+      "started_at_utc": "2026-11-15T17:50:50.432148+00:00",
+      "command": [
+        "training/run_mansu.py",
+        "--config",
+        "configs/mansu_nf4_scaled.yaml",
+        "--checkpoint",
+        "HF/models/c0v2",
+        "--circuit",
+        "runs/mansu_nf4_scaled_20261115/discovery/attribution.json",
+        "--forget",
+        "runs/mansu_nf4_scaled_20261115/inputs/forget.json",
+        "--retain",
+        "runs/mansu_nf4_scaled_20261115/inputs/retain.json",
+        "--validation",
+        "runs/mansu_nf4_scaled_20261115/inputs/validation.json",
+        "--out",
+        "runs/mansu_nf4_scaled_20261115/training",
+        "--reference-device",
+        "cuda:0"
+      ],
+      "status": "failed",
+      "pid": 582764,
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-15T17:57:00.304630+00:00"
+    }
+  ],
+  "status": "failed",
+  "failure": "training failed with exit 1; see retained log",
+  "finished_at_utc": "2026-11-15T17:57:00.305324+00:00"
+}

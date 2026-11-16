@@ -1,0 +1,651 @@
+{
+  "payloads": {
+    "c1": {
+      "repo_id": "Mudit666/tiny-aya-tofu-c0v2-qint4",
+      "repo_type": "model",
+      "directory": "models/c1",
+      "files": {
+        "README.md": {
+          "bytes": 6913
+        },
+        "chat_template.jinja": {
+          "bytes": 3239
+        },
+        "config.json": {
+          "bytes": 2019
+        },
+        "generation_config.json": {
+          "bytes": 149
+        },
+        "lexsi_provenance.json": {
+          "bytes": 377
+        },
+        "model.safetensors": {
+          "bytes": 2568072456
+        },
+        "quanto_qmap.json": {
+          "bytes": 26500
+        },
+        "run.json": {
+          "bytes": 508
+        },
+        "tokenizer.json": {
+          "bytes": 21376527
+        },
+        "tokenizer_config.json": {
+          "bytes": 591
+        }
+      }
+    },
+    "c3": {
+      "repo_id": "Mudit666/tiny-aya-tofu-npo-c2-qint4",
+      "repo_type": "model",
+      "directory": "models/c3",
+      "files": {
+        "README.md": {
+          "bytes": 8272
+        },
+        "chat_template.jinja": {
+          "bytes": 3239
+        },
+        "config.json": {
+          "bytes": 2019
+        },
+        "generation_config.json": {
+          "bytes": 149
+        },
+        "lexsi_provenance.json": {
+          "bytes": 381
+        },
+        "model.safetensors": {
+          "bytes": 2568072456
+        },
+        "quanto_qmap.json": {
+          "bytes": 26500
+        },
+        "run.json": {
+          "bytes": 510
+        },
+        "tokenizer.json": {
+          "bytes": 21376527
+        },
+        "tokenizer_config.json": {
+          "bytes": 591
+        }
+      }
+    },
+    "plain-q4": {
+      "repo_id": "Mudit666/tiny-aya-global-qint4",
+      "repo_type": "model",
+      "directory": "models/plain-q4",
+      "files": {
+        "README.md": {
+          "bytes": 6806
+        },
+        "chat_template.jinja": {
+          "bytes": 3239
+        },
+        "config.json": {
+          "bytes": 2019
+        },
+        "generation_config.json": {
+          "bytes": 149
+        },
+        "lexsi_provenance.json": {
+          "bytes": 375
+        },
+        "model.safetensors": {
+          "bytes": 2568072456
+        },
+        "quanto_qmap.json": {
+          "bytes": 26500
+        },
+        "run.json": {
+          "bytes": 1665
+        },
+        "tokenizer.json": {
+          "bytes": 21376527
+        },
+        "tokenizer_config.json": {
+          "bytes": 592
+        }
+      }
+    },
+    "random30-q4": {
+      "repo_id": "Mudit666/tiny-aya-global-qint4-random77-bf16",
+      "repo_type": "model",
+      "directory": "models/random30-q4",
+      "files": {
+        "README.md": {
+          "bytes": 6890
+        },
+        "chat_template.jinja": {
+          "bytes": 3239
+        },
+        "config.json": {
+          "bytes": 2019
+        },
+        "generation_config.json": {
+          "bytes": 149
+        },
+        "lexsi_provenance.json": {
+          "bytes": 375
+        },
+        "model.safetensors": {
+          "bytes": 3830144028
+        },
+        "quanto_qmap.json": {
+          "bytes": 18397
+        },
+        "run.json": {
+          "bytes": 1911
+        },
+        "tokenizer.json": {
+          "bytes": 21376527
+        },
+        "tokenizer_config.json": {
+          "bytes": 592
+        }
+      }
+    },
+    "protected-q4": {
+      "repo_id": "Mudit666/tiny-aya-global-qint4-refusalmask77-bf16",
+      "repo_type": "model",
+      "directory": "models/protected-q4",
+      "files": {
+        "README.md": {
+          "bytes": 8581
+        },
+        "chat_template.jinja": {
+          "bytes": 3239
+        },
+        "config.json": {
+          "bytes": 2019
+        },
+        "generation_config.json": {
+          "bytes": 149
+        },
+        "lexsi_provenance.json": {
+          "bytes": 375
+        },
+        "model.safetensors": {
+          "bytes": 3830144052
+        },
+        "quanto_qmap.json": {
+          "bytes": 18403
+        },
+        "tokenizer.json": {
+          "bytes": 21376527
+        },
+        "tokenizer_config.json": {
+          "bytes": 593
+        }
+      }
+    },
+    "c0v2": {
+      "repo_id": "Mudit666/tiny-aya-tofu-c0v2",
+      "repo_type": "model",
+      "directory": "models/c0v2",
+      "files": {
+        "README.md": {
+          "bytes": 11467
+        },
+        "adapter/adapter_config.json": {
+          "bytes": 1220
+        },
+        "adapter/adapter_model.safetensors": {
+          "bytes": 241895584
+        },
+        "chat_template.jinja": {
+          "bytes": 3239
+        },
+        "config.json": {
+          "bytes": 2019
+        },
+        "generation_config.json": {
+          "bytes": 149
+        },
+        "model.safetensors": {
+          "bytes": 6698488600
+        },
+        "tokenizer.json": {
+          "bytes": 21376527
+        },
+        "tokenizer_config.json": {
+          "bytes": 593
+        }
+      }
+    },
+    "c2": {
+      "repo_id": "Mudit666/tiny-aya-tofu-npo-c2",
+      "repo_type": "model",
+      "directory": "models/c2",
+      "files": {
+        "README.md": {
+          "bytes": 16853
+        },
+        "adapter/adapter_config.json": {
+          "bytes": 1183
+        },
+        "adapter/adapter_model.safetensors": {
+          "bytes": 241895584
+        },
+        "chat_template.jinja": {
+          "bytes": 3239
+        },
+        "config.json": {
+          "bytes": 2019
+        },
+        "generation_config.json": {
+          "bytes": 149
+        },
+        "model.safetensors": {
+          "bytes": 6698488600
+        },
+        "tokenizer.json": {
+          "bytes": 21376527
+        },
+        "tokenizer_config.json": {
+          "bytes": 593
+        }
+      }
+    },
+    "evaluation": {
+      "repo_id": "Mudit666/tiny-aya-compression-evaluation",
+      "repo_type": "dataset",
+      "directory": "datasets/evaluation",
+      "files": {
+        "README.md": {
+          "bytes": 6109
+        },
+        "ids/discovery_ids.json": {
+          "bytes": 10792
+        },
+        "results/README.md": {
+          "bytes": 1341
+        },
+        "results/mansu_20261115_attempt/RESULTS.md": {
+          "bytes": 1282
+        },
+        "results/mansu_20261115_attempt/attempt_summary.json": {
+          "bytes": 1431
+        },
+        "results/mansu_20261115_attempt/attribution_before.json": {
+          "bytes": 1106586
+        },
+        "results/mansu_20261115_attempt/execution_stages.json": {
+          "bytes": 1437
+        },
+        "results/mansu_20261115_attempt/inputs_receipt.json": {
+          "bytes": 46860
+        },
+        "results/mansu_20261115_attempt/rendered_lengths_preflight.json": {
+          "bytes": 209
+        },
+        "results/mansu_20261115_attempt/source_identity_check.json": {
+          "bytes": 87
+        },
+        "results/mansu_20261115_attempt/training.json": {
+          "bytes": 11680
+        },
+        "results/mansu_nf4_scaled_20261115_attempt/RESULTS.md": {
+          "bytes": 1080
+        },
+        "results/mansu_nf4_scaled_20261115_attempt/attempt_summary.json": {
+          "bytes": 1436
+        },
+        "results/mansu_nf4_scaled_20261115_attempt/attribution_before.json": {
+          "bytes": 1106586
+        },
+        "results/mansu_nf4_scaled_20261115_attempt/execution_stages.json": {
+          "bytes": 1074
+        },
+        "results/mansu_nf4_scaled_20261115_attempt/inputs_receipt.json": {
+          "bytes": 46860
+        },
+        "results/mansu_nf4_scaled_20261115_attempt/nf4_scale_preflight.json": {
+          "bytes": 179
+        },
+        "results/mansu_nf4_scaled_20261115_attempt/rendered_lengths_preflight.json": {
+          "bytes": 209
+        },
+        "results/mansu_nf4_scaled_20261115_attempt/source_identity_check.json": {
+          "bytes": 87
+        },
+        "results/mansu_nf4_scaled_20261115_attempt/training.json": {
+          "bytes": 13771
+        },
+        "results/nf4_followup/README.md": {
+          "bytes": 3726
+        },
+        "results/nf4_followup/cpu_check.json": {
+          "bytes": 5415
+        },
+        "results/nf4_followup/mansu_paper_settings/floor.json": {
+          "bytes": 836
+        },
+        "results/nf4_followup/mansu_paper_settings/gate.json": {
+          "bytes": 6901
+        },
+        "results/nf4_followup/mansu_paper_settings/predictions_gradient_signs.json": {
+          "bytes": 19287
+        },
+        "results/nf4_followup/mansu_paper_settings/predictions_random_signs.json": {
+          "bytes": 19029
+        },
+        "results/nf4_followup/mcq/c0_bf16.json": {
+          "bytes": 56862
+        },
+        "results/nf4_followup/mcq/c0_nf4.json": {
+          "bytes": 56850
+        },
+        "results/nf4_followup/mcq/npo_bf16.json": {
+          "bytes": 56313
+        },
+        "results/nf4_followup/mcq/npo_nf4.json": {
+          "bytes": 56357
+        },
+        "results/nf4_followup/nf4_build_c0v2.json": {
+          "bytes": 573
+        },
+        "results/nf4_followup/nf4_build_c2.json": {
+          "bytes": 573
+        },
+        "results/nf4_followup/nf4_contrasts.json": {
+          "bytes": 3997
+        },
+        "results/nf4_followup/posthoc_npo_vs_c0_mcq.json": {
+          "bytes": 281
+        },
+        "results/provenance/compression/plain-q4/run.json": {
+          "bytes": 1665
+        },
+        "results/provenance/compression/r1/c1-nf4.json": {
+          "bytes": 471
+        },
+        "results/provenance/compression/r1/c1-q4.json": {
+          "bytes": 546
+        },
+        "results/provenance/compression/r1/c3-nf4.json": {
+          "bytes": 469
+        },
+        "results/provenance/compression/r1/c3-q4.json": {
+          "bytes": 544
+        },
+        "results/provenance/compression/r1/plain-q4.json": {
+          "bytes": 735
+        },
+        "results/provenance/compression/r1/protected-q4.json": {
+          "bytes": 793
+        },
+        "results/provenance/compression/r1/random30-q4.json": {
+          "bytes": 751
+        },
+        "results/provenance/compression/random30-q4/run.json": {
+          "bytes": 1911
+        },
+        "results/provenance/compression/refusal_circuit_matched/eap-ig_CohereLabs_tiny-aya-global_aya_refusal_node_scores.json": {
+          "bytes": 28692
+        },
+        "results/provenance/compression/refusal_circuit_matched/run.json": {
+          "bytes": 1546
+        },
+        "results/provenance/compression/study_s_metadata.json": {
+          "bytes": 9251
+        },
+        "results/provenance/training/c0v2-adapter/train_log.json": {
+          "bytes": 39572
+        },
+        "results/provenance/training/c2-lr3e-05-adapter/merge_diagnostics.json": {
+          "bytes": 370
+        },
+        "results/provenance/training/c2-lr3e-05-adapter/merge_stats.json": {
+          "bytes": 156
+        },
+        "results/provenance/training/c2-lr3e-05-adapter/unlearn_log.json": {
+          "bytes": 37244
+        },
+        "results/provenance/training/c2_selection.json": {
+          "bytes": 936
+        },
+        "results/provenance/training/r2_merge_c0v2.json": {
+          "bytes": 463
+        },
+        "results/provenance/training/r2_merge_c2.json": {
+          "bytes": 479
+        },
+        "results/provenance/training/r2_rescore/c0v2/run_settings.json": {
+          "bytes": 17984
+        },
+        "results/provenance/training/r2_rescore/c2/run_settings.json": {
+          "bytes": 17980
+        },
+        "results/provenance/training/r2_rescore_vs_saved_c0v2.json": {
+          "bytes": 456
+        },
+        "results/provenance/training/r2_rescore_vs_saved_c2.json": {
+          "bytes": 452
+        },
+        "results/study_s/eval/original/aya_redteam_hi_ar.jsonl": {
+          "bytes": 12530
+        },
+        "results/study_s/eval/original/harmbench_heldout.jsonl": {
+          "bytes": 26498
+        },
+        "results/study_s/eval/original/manifest.json": {
+          "bytes": 455
+        },
+        "results/study_s/eval/original/summary.json": {
+          "bytes": 1094
+        },
+        "results/study_s/eval/original/xstest_safe.jsonl": {
+          "bytes": 38176
+        },
+        "results/study_s/eval/plain-q4/aya_redteam_hi_ar.jsonl": {
+          "bytes": 19615
+        },
+        "results/study_s/eval/plain-q4/harmbench_heldout.jsonl": {
+          "bytes": 38523
+        },
+        "results/study_s/eval/plain-q4/manifest.json": {
+          "bytes": 499
+        },
+        "results/study_s/eval/plain-q4/summary.json": {
+          "bytes": 2467
+        },
+        "results/study_s/eval/plain-q4/xstest_safe.jsonl": {
+          "bytes": 55859
+        },
+        "results/study_s/eval/protected-q4/aya_redteam_hi_ar.jsonl": {
+          "bytes": 19668
+        },
+        "results/study_s/eval/protected-q4/harmbench_heldout.jsonl": {
+          "bytes": 38619
+        },
+        "results/study_s/eval/protected-q4/manifest.json": {
+          "bytes": 548
+        },
+        "results/study_s/eval/protected-q4/summary.json": {
+          "bytes": 2524
+        },
+        "results/study_s/eval/protected-q4/xstest_safe.jsonl": {
+          "bytes": 56031
+        },
+        "results/study_s/eval/random30-q4/aya_redteam_hi_ar.jsonl": {
+          "bytes": 19638
+        },
+        "results/study_s/eval/random30-q4/harmbench_heldout.jsonl": {
+          "bytes": 38540
+        },
+        "results/study_s/eval/random30-q4/manifest.json": {
+          "bytes": 505
+        },
+        "results/study_s/eval/random30-q4/summary.json": {
+          "bytes": 2462
+        },
+        "results/study_s/eval/random30-q4/xstest_safe.jsonl": {
+          "bytes": 55909
+        },
+        "results/study_s/mmlu/original/manifest.json": {
+          "bytes": 434
+        },
+        "results/study_s/mmlu/original/mmlu_en.jsonl": {
+          "bytes": 100399
+        },
+        "results/study_s/mmlu/original/mmlu_hi.jsonl": {
+          "bytes": 40079
+        },
+        "results/study_s/mmlu/original/summary.json": {
+          "bytes": 702
+        },
+        "results/study_s/mmlu/plain-q4/manifest.json": {
+          "bytes": 372
+        },
+        "results/study_s/mmlu/plain-q4/mmlu_en.jsonl": {
+          "bytes": 100422
+        },
+        "results/study_s/mmlu/plain-q4/mmlu_hi.jsonl": {
+          "bytes": 40090
+        },
+        "results/study_s/mmlu/plain-q4/summary.json": {
+          "bytes": 572
+        },
+        "results/study_s/mmlu/protected-q4/manifest.json": {
+          "bytes": 421
+        },
+        "results/study_s/mmlu/protected-q4/mmlu_en.jsonl": {
+          "bytes": 100375
+        },
+        "results/study_s/mmlu/protected-q4/mmlu_hi.jsonl": {
+          "bytes": 40053
+        },
+        "results/study_s/mmlu/protected-q4/summary.json": {
+          "bytes": 625
+        },
+        "results/study_s/mmlu/random30-q4/manifest.json": {
+          "bytes": 378
+        },
+        "results/study_s/mmlu/random30-q4/mmlu_en.jsonl": {
+          "bytes": 100398
+        },
+        "results/study_s/mmlu/random30-q4/mmlu_hi.jsonl": {
+          "bytes": 40035
+        },
+        "results/study_s/mmlu/random30-q4/summary.json": {
+          "bytes": 580
+        },
+        "results/study_u/c0v2/forget.jsonl": {
+          "bytes": 117928
+        },
+        "results/study_u/c0v2/manifest.json": {
+          "bytes": 378
+        },
+        "results/study_u/c0v2/mmlu_en.jsonl": {
+          "bytes": 101252
+        },
+        "results/study_u/c0v2/mmlu_hi.jsonl": {
+          "bytes": 40368
+        },
+        "results/study_u/c0v2/retain.jsonl": {
+          "bytes": 115326
+        },
+        "results/study_u/c0v2/summary.json": {
+          "bytes": 870
+        },
+        "results/study_u/c1/forget.jsonl": {
+          "bytes": 119644
+        },
+        "results/study_u/c1/manifest.json": {
+          "bytes": 363
+        },
+        "results/study_u/c1/mmlu_en.jsonl": {
+          "bytes": 100421
+        },
+        "results/study_u/c1/mmlu_hi.jsonl": {
+          "bytes": 40170
+        },
+        "results/study_u/c1/retain.jsonl": {
+          "bytes": 116895
+        },
+        "results/study_u/c1/summary.json": {
+          "bytes": 876
+        },
+        "results/study_u/c2/forget.jsonl": {
+          "bytes": 121421
+        },
+        "results/study_u/c2/manifest.json": {
+          "bytes": 375
+        },
+        "results/study_u/c2/mmlu_en.jsonl": {
+          "bytes": 101178
+        },
+        "results/study_u/c2/mmlu_hi.jsonl": {
+          "bytes": 40431
+        },
+        "results/study_u/c2/retain.jsonl": {
+          "bytes": 116638
+        },
+        "results/study_u/c2/summary.json": {
+          "bytes": 886
+        },
+        "results/study_u/c3/forget.jsonl": {
+          "bytes": 121411
+        },
+        "results/study_u/c3/manifest.json": {
+          "bytes": 363
+        },
+        "results/study_u/c3/mmlu_en.jsonl": {
+          "bytes": 100664
+        },
+        "results/study_u/c3/mmlu_hi.jsonl": {
+          "bytes": 40216
+        },
+        "results/study_u/c3/retain.jsonl": {
+          "bytes": 118727
+        },
+        "results/study_u/c3/summary.json": {
+          "bytes": 875
+        },
+        "results/study_u/original/forget.jsonl": {
+          "bytes": 122910
+        },
+        "results/study_u/original/manifest.json": {
+          "bytes": 434
+        },
+        "results/study_u/original/mmlu_en.jsonl": {
+          "bytes": 100399
+        },
+        "results/study_u/original/mmlu_hi.jsonl": {
+          "bytes": 40079
+        },
+        "results/study_u/original/retain.jsonl": {
+          "bytes": 120010
+        },
+        "results/study_u/original/summary.json": {
+          "bytes": 951
+        },
+        "results/tables/study_s_tables.json": {
+          "bytes": 11456
+        },
+        "results/tables/study_s_tables.md": {
+          "bytes": 4044
+        },
+        "results/tables/study_s_vs_original.md": {
+          "bytes": 3487
+        },
+        "results/tables/study_u_contrasts.json": {
+          "bytes": 5045
+        },
+        "results/tables/study_u_contrasts.md": {
+          "bytes": 1549
+        },
+        "results/tables/study_u_levels.json": {
+          "bytes": 7763
+        },
+        "results/tables/study_u_levels.md": {
+          "bytes": 1752
+        }
+      }
+    }
+  }
+}

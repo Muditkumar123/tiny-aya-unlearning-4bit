@@ -1,0 +1,44 @@
+{
+ "label": "c1",
+ "size_mb": 2448.95703125,
+ "limit": null,
+ "spec": {
+  "model": "tiny-aya-c1@c1-q4",
+  "generation": {
+   "max_tokens": 128,
+   "temperature": 0
+  },
+  "batch_size": 16,
+  "stop_ids": [
+   6,
+   3
+  ],
+  "tokenizer": {
+   "name": "CohereLabs/tiny-aya-global",
+   "vocab": 261008
+  },
+  "scoring": "v1: rouge_score rougeL recall stemmed; lp = mean per token of gold tokens, fp32 log_softmax; TOFU truth ratio; MMLU first-letter"
+ },
+ "sets": {
+  "forget": {
+   "n": 400,
+   "rougeL_recall": 0.8697533321540678,
+   "lp_answer": -0.06788666671496862,
+   "truth_ratio_tofu": 0.44833397703232175
+  },
+  "retain": {
+   "n": 400,
+   "rougeL_recall": 0.8621526560836782,
+   "lp_answer": -0.07756438785332931,
+   "truth_ratio_tofu": 0.5226523239293086
+  },
+  "mmlu_en": {
+   "n": 500,
+   "accuracy": 0.5
+  },
+  "mmlu_hi": {
+   "n": 200,
+   "accuracy": 0.515
+  }
+ }
+}

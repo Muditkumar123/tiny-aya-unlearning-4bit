@@ -1,0 +1,24 @@
+{
+ "ckpt": "c3-nf4",
+ "kind": "nf4",
+ "bytes": 2655963820,
+ "sha256_status": "new reference: no output hash is recorded in this checkpoint's provenance",
+ "versions": {
+  "torch": "2.11.0+cu128",
+  "bitsandbytes": "0.50.2"
+ },
+ "recorded": {
+  "bytes": 2655963820,
+  "source": "c2-lr3e-05-merged"
+ },
+ "source": {
+  "dir": "c2-lr3e-05-merged"
+ },
+ "checks": {
+  "decoder_linears": 252,
+  "nf4": 252,
+  "excluded_params_compared": 38
+ },
+ "failures": [],
+ "pass": true
+}

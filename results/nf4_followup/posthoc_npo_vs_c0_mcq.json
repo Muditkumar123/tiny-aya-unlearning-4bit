@@ -1,0 +1,11 @@
+{
+ "post_hoc_not_in_protocol": "NPO bf16 minus C0v2 bf16, forget MCQ accuracy, author-clustered bootstrap",
+ "result": {
+  "point": -0.03500000000000003,
+  "ci_low": -0.05500000000000005,
+  "ci_high": -0.012499999999999956,
+  "n": 400,
+  "n_clusters": 20,
+  "nan_resamples": 0
+ }
+}

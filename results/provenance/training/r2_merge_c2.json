@@ -1,0 +1,26 @@
+{
+ "base": "c0v2-target-merged",
+ "revision": null,
+ "adapter": "c2-lr3e-05-adapter",
+ "merged": "c2-lr3e-05-merged",
+ "versions": {
+  "torch": "2.11.0+cu128",
+  "transformers": "5.22.1",
+  "peft": "0.21.2"
+ },
+ "torch_threads": 64,
+ "lora_linears": 252,
+ "tensors_compared": 290,
+ "absent_tied": [
+  "lm_head.weight"
+ ],
+ "absent_untied": [],
+ "mismatches": [],
+ "n_mismatched_tensors": 0,
+ "reload": {
+  "param_dtypes": {
+   "torch.bfloat16": 3349227520
+  }
+ },
+ "pass": true
+}
