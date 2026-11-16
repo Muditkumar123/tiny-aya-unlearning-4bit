@@ -16,7 +16,7 @@ This project partly recreates, and modestly extends, two Lexsi Labs papers on [T
 > - Refusal survives 4-bit with or without protected layers. Protection buys fidelity: mean KL to the original is 15–31% lower than with a size-matched random choice of layers.
 > - Unlearning is less robust. 4-bit gives back 12–15% of the answer likelihood that NPO removed.
 
-[Abstract](docs/ABSTRACT.md) · [How we did it](docs/METHODS.md) · [MANSU details](docs/MANSU.md)
+[Abstract](docs/ABSTRACT.md) · [How we did it](docs/METHODS.md) · [MANSU details](docs/MANSU.md) · [Release history](docs/HISTORY.md)
 
 ## Why this matters
 
